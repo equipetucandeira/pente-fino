@@ -1,0 +1,71 @@
+version: '3.8'
+services:
+  php-apache-environment:
+    networks:
+      - minha-rede
+    container_name: php-apache
+    image: pente-fino-img
+    build: 
+        context: ./php
+        dockerfile: Dockerfile
+    volumes:
+      - ./php/src:/var/www/html/
+      #Nesse campo os usuarios de Windows C:\caminho\para\seu\projeto\php\src:/var/www/html/ será necessário baixar o WSL 
+      #(Subsistema linux), pois é o a pasta root padrão para servidore web. Acredito que no Mac já há essa config de pastas
+    ports:
+      - '8000:80' #Estou passando a porta 3000, pois estava dando conflito com o apache já instalado, mas podem manter a 8000
+    environment:
+          MYSQL_HOST: db
+          MYSQL_PORT: 3306
+          MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+          MYSQL_DATABASE: ${MYSQL_DATABASE}
+          MYSQL_USER: ${MYSQL_USER}
+          MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+  db:
+     container_name: db
+     image: mysql
+     restart: always
+     environment:
+         MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD} # Passe esse dado no arquivo .env
+         MYSQL_DATABASE: ${MYSQL_DATABASE} # Passe esse dado no arquivo .env
+         MYSQL_USER: ${MYSQL_USER} # Passe esse dado no arquivo .env
+         MYSQL_PASSWORD: ${MYSQL_PASSWORD} # Passe esse dado no arquivo .env
+     
+     
+
+  #       #Passar na seguinte forma no connection.php
+
+         # $mysqlRootPassword = $_ENV['MYSQL_ROOT_PASSWORD'];
+         # $mysqlDatabase = $_ENV['MYSQL_DATABASE'];
+         # $mysqlUser = $_ENV['MYSQL_USER'];
+         # $mysqlPassword = $_ENV['MYSQL_PASSWORD'];
+
+     ports:
+         - "9906:3306"
+     networks:
+         - minha-rede
+
+  
+  phpmyadmin:
+       image: phpmyadmin/phpmyadmin
+       container_name: phpmyadmin
+       restart: always
+       environment:
+           PMA_HOST: db
+       ports:
+           - '8081:80'
+       depends_on:
+           - db
+       networks:
+           - minha-rede
+
+networks: 
+    minha-rede: 
+        driver: bridge
+
+
+     
+
+
+
+
