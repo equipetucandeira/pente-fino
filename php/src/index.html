@@ -4,17 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Document</title>
 </head>
 <body>
-    <div class="grid grid-cols-3 gap-4">
-        <div class="...">01</div>
-        <div class="...">02</div>
-        <div class="...">03</div>
-        <div class="col-span-2 ...">04</div>
-        <div class="...">05</div>
-        <div class="...">06</div>
-        <div class="col-span-2 ...">07</div>
-      </div>
+    <!--------------------------HEADER - BANNER-------------------------->
+    <section class="bg-[url('./assets/images/back-1.jpg')] h-screen bg-cover">
+        <header>
+            <ul class="flex w-full justify-evenly h-100px items-center p-5 font-['Sancreek'] text-3xl text-white">
+                <li><a href="" class="hover:text-ycol transition">Página Inicial</a></li>
+                <li><a href="" class="hover:text-ycol transition">Sobre</a></li>
+                <li><a href=""><img src="./assets/images/logo-principal.png" alt="Logo Pente-Fino" width="100" height="100"></a></li>
+                <li><a href="" class="hover:text-ycol transition">Agendar</a></li>
+                <li><a href="" class="text-ycol hover:text-white transition">Login</a></li>
+                <li class="absolute hidden right-10"><a href=""><img src="./assets/images/icon/user.png" width="32" height="32" alt="Profile"></a></li>
+            </ul>
+        </header>
+            
+        <div class="flex flex-col justify-center font-['Sancreek'] ml-percent-10 w-1/2">
+            <h1 class="text-7xl text-white">A Agenda que vai até você!</h1>
+            <a href="" class="w-full"><button class="w-full mt-9 text-4xl text-white border border-solid border-white p-4">Agende agora</button></a>
+        </div>
+    </section>
+    <!--------------------------QUEM SOMOS ?----------------------------->
+    <section class="grid grid-rows-3 grid-cols-2">
+        <div class="flex flex-col pl-32 justify-center gap-4">
+            <div class="text-black text-[80px] font-normal font-['Smythe']">Quem somos?</div>
+            <div class="text-black text-[35px] font-normal font-['Smythe']">Bem-vindo à Barbearia Pente Fino!</div>
+            <div class="text-black text-[30px] font-normal font-['Smythe']">Somos uma equipe apaixonada por proporcionar cortes precisos e cuidados personalizados, combinando tradição e modernidade. </div>
+            <div class="">
+                <span class="text-black text-[30px] font-normal font-['Smythe']">Na Barbearia Estilo Clássico, não apenas cortamos cabelo, mas criamos memórias através de cada corte. </span>
+                <span class="text-amber-400 text-[30px] font-normal font-['Smythe'] underline">Visite-nos</span><span class="text-black text-[30px] font-normal font-['Smythe']"> para transformar sua rotina de cuidados pessoais em momentos especiais.</span>
+            </div>
+        </div>
+        <div class="flex  justify-end ">
+            <img src="./assets/images/scissor.png" alt="" class="object-cover">
+        </div>
+    </section>
 </body>
 </html>
+
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                height: {
+                    '100px': '100px',
+                    'h-calc': 'calc(100vh - 100px)',
+                },
+                colors: {
+                    'ycol': '#ECA72C',
+                },
+                width: {
+                    'percent-70': '70%',
+                },
+                margin: {
+                    'percent-10': '10%',
+                },
+                font: {
+                    'Smythe': ['Smythe', sans-serif]
+                },
+                paddingLeft: {
+                    'pl-15': '3.5rem'
+                }
+
+            }
+        }
+    }
+</script>
