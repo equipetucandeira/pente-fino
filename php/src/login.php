@@ -6,6 +6,8 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <script src="assets/js/login.js" defer></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -19,7 +21,7 @@
 
         <div class="w-[45px] md:w-[55px] lg:w-[60px] top-5 md:top-8 lg:top-10 left-5 md:left-8 lg:left-10 absolute">
             <a href="index.html">
-                <img src="assets/images/icons/back.svg" alt="Voltar (Back)" class="w-full h-full" >
+                <img src="assets/images/icons/back.svg" alt="Voltar (Back)" class="w-full h-full">
             </a>
         </div>
 
@@ -28,23 +30,27 @@
         </div>
 
         <form action="#" method=""
-            class="w-fit h-fit flex flex-col items-center" >
+            class="w-fit h-fit flex flex-col items-center relative" >
 
             <input type="text" id="emailUserLogin" name="emailUserLogin" placeholder="E-mail"
             class="w-[300px] md:w-[500px] lg:w-[550px] h-[60px] md:h-[65px] lg:h-[70px] 
-            bg-[#262d3b] rounded-[15px] mt-5 pl-5 
+            bg-[#262d3b] rounded-[15px] mt-10 pl-5 
             text-white text-[20px] font-['Inter'] 
             placeholder:text-white placeholder:text-[20px]" 
             >
 
             <input type="password" id="passwordUserLogin" name="passwordUserLogin" placeholder="Senha"
-            class="w-[300px] md:w-[500px] lg:w-[550px] h-[60px] md:h-[65px] lg:h-[70px] 
-            bg-[#262d3b] rounded-[15px] mt-5 pl-5 
+            class="w-[300px] md:w-[500px] lg:w-[550px] h-[60px] md:h-[65px] lg:h-[70px] relative
+            bg-[#262d3b] rounded-[15px] mt-[50px] pl-5 pr-5
             text-white text-[20px] font-['Inter'] 
             placeholder:text-white placeholder:text-[20px]" 
-            
             >
 
+            <span class="w-[42px] bg-[#262d3b] translate-x-[105px] md:translate-x-[205px] lg:translate-x-[230px] 
+            translate-y-[158px] md:translate-y-[165px] lg:translate-y-[175px] absolute" >
+                <img src="assets/images/icons/show-password.png" alt="Mostrar Senha (Show Password)" id="showPassword"  class="hover:cursor-pointer">
+            </span>
+            
             <button type="submit"
             class="w-[300px] md:w-[500px] lg:w-[550px] h-[60px] md:h-[65px] lg:h-[70px]
             bg-[#ECA72C] rounded-[18px] mt-[55px] 
