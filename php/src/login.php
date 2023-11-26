@@ -17,11 +17,11 @@
 </head>
 <body class="w-full h-screen flex flex-col items-center justify-center bg-[url('/assets/images/bgImage-login.jpg')] bg-no-repeat bg-cover backdrop-blur-sm">
     
-    <main class="w-11/12 md:w-10/12 lg:w-8/12 h-4/5 bg-zinc-300 bg-opacity-90 rounded-2xl flex flex-col justify-center md:justify-normal items-center relative">
+    <main class="w-11/12 md:w-10/12 lg:w-8/12 h-4/5 flex flex-col justify-center md:justify-normal items-center bg-zinc-300 bg-opacity-90 rounded-2xl relative">
 
         <div class="w-[45px] md:w-[55px] lg:w-[60px] top-5 md:top-8 lg:top-10 left-5 md:left-8 lg:left-10 absolute">
             <a href="index.html">
-                <img src="assets/images/icons/back.svg" alt="Voltar (Back)" class="w-full h-full">
+                <img src="assets/images/icons/back.svg" alt="Voltar (Back)" id="back-button" class="w-full h-full hover:scale-110 ease-in-out duration-300">
             </a>
         </div>
 
@@ -46,8 +46,9 @@
             placeholder:text-white placeholder:text-[20px]" 
             >
 
-            <span class="w-[42px] bg-[#262d3b] translate-x-[105px] md:translate-x-[205px] lg:translate-x-[230px] 
-            translate-y-[158px] md:translate-y-[165px] lg:translate-y-[175px] absolute" >
+            <span class="w-[42px] bg-[#262d3b] absolute
+            translate-x-[105px] md:translate-x-[205px] lg:translate-x-[230px] 
+            translate-y-[158px] md:translate-y-[165px] lg:translate-y-[175px]" >
                 <img src="assets/images/icons/show-password.png" alt="Mostrar Senha (Show Password)" id="showPassword"  class="hover:cursor-pointer">
             </span>
             
