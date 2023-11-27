@@ -29,7 +29,8 @@
             flex flex-col
             items-center justify-center md:justify-normal">
                 
-                <h3 class="text-white font-extrabold font-['Inter']
+                <h3 
+                class="text-white font-extrabold font-['Inter']
                 text-[20px] md:text-[30px] lg:text-[38px]">
                     ENTRE EM CONTATO
                 </h3>
@@ -52,12 +53,14 @@
             flex flex-col
             items-center justify-center md:justify-normal">
 
-                <h3 class="text-white font-extrabold font-['Inter']
+                <h3 
+                class="text-white font-extrabold font-['Inter']
                 text-[20px] md:text-[30px] lg:text-[36px]">
                     AGENDE UM HORÁRIO
                 </h3>
                 <br>
-                <button class="w-[200px] md:w-[245px] h-[65px] md:h-[85px]
+                <button 
+                class="w-[200px] md:w-[245px] h-[65px] md:h-[85px]
                 border-[#ECA72C] border-solid border-2 rounded-[8px]
                 mt-[20px] md:mt-[60px]
                 text-[#ECA72C] font-bold font-['Inter']

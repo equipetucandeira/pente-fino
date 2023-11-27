@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="assets/images/icons/favicon.ico" type="image/x-icon">
     <title>Pente Fino | Login</title>
 </head>
-<body class="w-full h-screen flex flex-col items-center justify-center bg-[url('/assets/images/bgImage-login.jpg')] bg-no-repeat bg-cover backdrop-blur-sm">
+<body class="w-full h-screen flex flex-col items-center justify-center bg-[url('assets/images/bgImage-login.jpg')] bg-no-repeat bg-cover backdrop-blur-sm">
     
     <main class="w-11/12 md:w-10/12 lg:w-8/12 h-4/5 flex flex-col justify-center md:justify-normal items-center bg-zinc-300 bg-opacity-90 rounded-2xl relative">
 
