@@ -1,25 +1,44 @@
-const inputPassword = document.querySelector("#passwordUserLogin")
-const buttonShowHide = document.querySelector("#showPassword");
-var passwordIsHide = true;
-
-buttonShowHide.addEventListener("click", ()=>{
-    if(passwordIsHide){
-        showPassword();
-    } else {
-        hidePassword();
+class MobileNavBar {
+    constructor(mobileMenu, navList, navLinks, mobileNav) {
+        this.mobileMenu = document.querySelector(mobileMenu);
+        this.navList = document.querySelector(navList);
+        this.navLinks = document.querySelectorAll(navLinks);
+        this.mobileNav = document.getElementById(mobileNav);
+        this.activeNav = "active-nav";
+        this.activeMenu = "active-menu";
+        this.handleClick = this.handleClick.bind(this);
     }
-});
 
-function showPassword(){
-    buttonShowHide.src = "../assets/images/icon/hide-password.png";
-    buttonShowHide.alt = "Esconder Senha (Hide Password)";
-    passwordIsHide = false;
-    inputPassword.type = "text";
+    handleClick() {
+        this.navList.classList.toggle(this.activeNav);
+        this.mobileMenu.classList.toggle(this.activeMenu);
+        this.mobileNav.classList.toggle('scale-y-0');
+    }
+
+    addClickEvent() {
+        this.mobileMenu.addEventListener('click', this.handleClick);
+
+        this.navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                this.handleClick();
+            });
+        });
+    }
+
+    init() {
+        if (this.mobileMenu) {
+            this.addClickEvent();
+        }
+        return this;
+    }
 }
 
-function hidePassword(){
-    buttonShowHide.src = "../assets/images/icon/show-password.png";
-    buttonShowHide.alt = "Mostrar Senha (Show Password)";
-    passwordIsHide = true;
-    inputPassword.type = "password";
-}
+const mobileNavbar = new MobileNavBar(
+    '.mobile-menu',
+    '.nav-list',
+    '.nav-list li',
+    'mobileNav'
+);
+
+mobileNavbar.init();
+
