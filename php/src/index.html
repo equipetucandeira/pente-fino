@@ -5,36 +5,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-    <link rel="stylesheet" href="./assets/css/style.css">
     <script src="./assets/js/index.js" defer></script>
-    <title>Document</title>
+    <script src="./assets/js/tailwind.config.js" defer></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Pente Fino</title>
 </head>
 
 <body>
     <!--------------------------HEADER - BANNER-------------------------->
     <section class="bg-[url('./assets/images/back-1.jpg')] h-screen bg-cover">
         <header>
-            <ul class="flex w-full justify-evenly h-100px items-center p-5 font-['Sancreek'] text-3xl text-white">
-                <li><a href="" class="hover:text-ycol transition">Página Inicial</a></li>
-                <li><a href="" class="hover:text-ycol transition">Sobre</a></li>
-                <li><a href=""><img src="./assets/images/logo-principal.png" alt="Logo Pente-Fino" width="100"
-                            height="100"></a></li>
-                <li><a href="" class="hover:text-ycol transition">Agendar</a></li>
-                <li><a href="" class="text-ycol hover:text-white transition">Login</a></li>
-                <li class="absolute hidden right-10"><a href=""><img src="./assets/images/icon/user.png" width="32"
-                            height="32" alt="Profile"></a></li>
+            <!-- Menu Hamburguer visível apenas em telas pequenas -->
+            <div class="h-100px md:hidden flex justify-evenly items-center z-50	">
+                <a href="#"><img src="./assets/images/logo-principal.png" alt="Logo Pente-Fino" width="100" height="100"></a>
+                <div class=" mobile-menu flex flex-col items-center cursor-pointer h-100px justify-center">
+                    <div class="line1 w-10 h-1 bg-black mb-1"></div>
+                    <div class="line2 w-10 h-1 bg-black mb-1"></div>
+                    <div class="line3 w-10 h-1 bg-black"></div>
+                </div>
+                <a href="#"><img src="./assets/images/icon/user.png" width="32" height="32" alt="Profile"></a>
+
+            </div>
+
+
+            <!-- Menu de Navegação para telas médias e grandes -->
+            <ul
+                class="hidden md:flex w-full justify-evenly h-100px items-center p-5 font-['Sancreek'] lg:text-3xl text-2xl text-white nav-list">
+                <li><a href="index.html" class="hover:text-yellow-500 transition">Página Inicial</a></li>
+                <li><a href="#" class="hover:text-yellow-500 transition">Sobre</a></li>
+                <li><a href="#"><img src="./assets/images/logo-principal.png" alt="Logo Pente-Fino" width="100" height="100"></a>
+                </li>
+                <li><a href="#" class="hover:text-yellow-500 transition">Agendar</a></li>
+                <li><a href="#" class="text-yellow-500 hover:text-black transition">Login</a></li>
+                <li class="absolute right-5"><a href="#"><img src="./assets/images/icon/user.png" width="32" height="32"
+                            alt="Profile"></a></li>
+            </ul>
+
+            <!-- Menu Responsivo para telas pequenas -->
+            <ul class="md:hidden flex flex-col items-center bg-transparent backdrop-blur text-white w-full absolute top-h-100px  transition ease-in-out delay-150 transform scale-y-0 font-['Sancreek'] text-3xl h-h-calc justify-around"
+                id="mobileNav">
+                <li><a href="index.html" class="hover:text-yellow-500 transition">Página Inicial</a></li>
+                <li><a href="#" class="py-2 hover:text-yellow-500 transition">Sobre</a></li>
+                <li><a href="#" class="py-2 hover:text-yellow-500 transition">Agendar</a></li>
+                <li><a href="#" class="py-2 hover:text-yellow-500 transition">Login</a></li>
             </ul>
         </header>
-
-        <div class="flex flex-col justify-center font-['Sancreek'] ml-percent-10 w-1/2">
-            <h1 class="text-7xl text-white">A Agenda que vai até você!</h1>
+        <div class="flex flex-col h-h-calc justify-center font-['Sancreek'] ml-percent-10 w-1/2">
+            <h1 class="md:text-7xl text-5xl text-white">A Agenda que vai até você!</h1>
             <a href="" class="w-full"><button
-                    class="w-full mt-9 text-4xl text-white border border-solid border-white p-4">Agende
+                    class="w-full mt-9 text-4xl text-white border border-solid border-white p-4 hover:border-ycol hover:text-ycol transition-all">Agende
                     agora</button></a>
         </div>
     </section>
 
-    <!--------------------------QUEM SOMOS ?----------------------------->
+    <!--------------------------QUEM SOMOS ?------------------------------->
     <section class="border-4 border-black flex lg:flex-row m-4 lg:m-12 flex-col ">
         <div class="flex flex-col lg:pl-14 xl:pl-36 justify-center items-center xl:items-start gap-4 p-4 lg:p-0">
             <div class="text-center text-black text-[50px] md:text-[80px] lg:text-[60px]  font-normal font-['Smythe']">
@@ -187,6 +211,41 @@
         </div>
     </section>
 
+    <!--------------------------AGENDAMENTOS----------------------------->
+
+    <section class="flex flex-col justify-center items-center md:h-h-calc mt-10">
+        <h1 class="md:text-8xl text-6xl font-['Smythe'] mb-5 font-bold ">Agendamentos</h1>
+        <div class="w-percent-80 border border-solid border-black p-10 flex justify-around lg:flex-row flex-col">
+            <div class="flex flex-col">
+                <div class="mb-10">
+                    <h2 class="font-['Smythe'] text-5xl mb-5 font-bold">Agende seu Estilo!</h2>
+                    <ul class="list-disc ml-percent-10">
+                        <li class="font-['Smythe'] text-2xl">Marque Seu horário para um corte impecável</li>
+                        <li class="font-['Smythe'] text-2xl">Escolha o dia e a hora que se encaixam no seu ritmo</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="font-['Smythe'] text-5xl mb-5 font-bold">Corte sem complicações!</h2>
+                    <ul class="list-disc ml-percent-10">
+                        <li class="font-['Smythe'] text-2xl">Mais tempo para você, menos tempo esperando</li>
+                        <li class="font-['Smythe'] text-2xl">Agende seu corte de cabelo ou barba online, sem sair de
+                            casa!
+                        </li>
+                        <li class="font-['Smythe'] text-2xl">Nosso sistema de agendamento é simples e intuitivo</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex flex-col justify-center mt-10 items-center">
+                <h2
+                    class="font-['Smythe'] [text-shadow:_3px_3px_3px_rgb(236_167_44_/_70%)] md:text-7xl text-5xl mb-10 text-center font-bold">
+                    Está esperando <br> o quê?</h2>
+                <a href="" class="w-percent-80 flex justify-center items-center"><button
+                        class="w-full bg-ycol p-5 text-white rounded-xl font-['Smythe'] font-bold text-2xl hover:bg-slate-50 hover:text-ycol transition">Agende
+                        um horário</button></a>
+            </div>
+        </div>
+    </section>
+
 
 
     <!------------------------------RODAPÉ--------------------------------->
@@ -250,33 +309,5 @@
         </section>
     </footer>
 </body>
-
 </html>
 
-<script>
-    tailwind.config = {
-        theme: {
-            extend: {
-                height: {
-                    '100px': '100px',
-                    'h-calc': 'calc(100vh - 100px)',
-                },
-                colors: {
-                    'ycol': '#ECA72C',
-                },
-                width: {
-                    'percent-70': '70%',
-                },
-                margin: {
-                    'percent-10': '10%',
-                },
-                font: {
-                    'Smythe': ['Smythe', sans - serif],
-                    'Inter': ['Inter', sans - serif],
-
-                },
-
-            }
-        }
-    }
-</script>
