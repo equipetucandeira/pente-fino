@@ -22,4 +22,4 @@ function hidePassword(){
     buttonShowHide.alt = "Mostrar Senha (Show Password)";
     passwordIsHide = true;
     inputPassword.type = "password";
-}
+}   
