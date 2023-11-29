@@ -14,7 +14,7 @@
     <link rel="shortcut icon" href="assets/images/icons/favicon.ico" type="image/x-icon">
     <title>Pente Fino | Agendamento</title>
 </head>
-<body>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae alias eos assumenda pariatur maxime ea necessitatibus. Optio odio expedita molestias? Labore nesciunt cumque culpa rerum dignissimos expedita iure molestias mollitia.</p>
+<body class="w-full h-screen flex flex-col items-center justify-center bg-[]">
+    
 </body>
 </html>
