@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <script src="./assets/js/login.js" defer></script>
     <script src="./assets/js/tailwind.config.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
 
     <link rel="shortcut icon" href="./assets/images/icon/favicon.ico" type="image/x-icon">
@@ -27,6 +28,11 @@
         <div class="w-[200px] md:w-[250px] lg:w-[300px]">
             <img src="./assets/images/logo-principal.png" alt="Logo - Pente Fino">
         </div>
+
+        <?php
+            if (isset($_GET['errorMessage'])) { ?>
+            <h1 class="error" id="error-message"><?php echo $_GET['errorMessage'];?></h1>
+        <?php }?>
 
         <form action="./login.php" method="post"
             class="w-fit h-fit flex flex-col items-center relative" >
@@ -55,7 +61,7 @@
             class="w-[300px] md:w-[500px] lg:w-[550px] h-[60px] md:h-[65px] lg:h-[70px]
             bg-[#ECA72C] rounded-[18px] mt-[55px] 
             text-white font-black text-[30px] font-['Inter'] 
-            hover:bg-[#684500] ease-in-out duration-500">
+            hover:bg-[#684500] ease-in-out duration-500" name="btn_login">
                 ENTRAR
             </button>
         </form>
@@ -69,3 +75,15 @@
     </main> 
 </body>
 </html>
+<script>
+    $(document).ready(function () {
+        var error = $('#error-message');
+        if (error.length) {
+            setTimeout(() => {
+               error.hide(1000, ()=>{
+                    $(this).remove();
+               }); 
+            }, 3000);
+        }
+    });
+</script>
