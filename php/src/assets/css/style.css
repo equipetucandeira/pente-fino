@@ -1,2 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Sancreek&family=Smythe&display=swap');
 
+
+.step {
+    display: none;
+}
+
+.step.active{
+    display:flex;
+}
+
+.span-required{
+    display: none;
+    margin-top: 5px;
+    font-size: 0.75rem;
+    color:  #e63636;
+}
+

@@ -7,7 +7,6 @@ $port= getenv('MYSQL_PORT');
 
 echo $dbName. ' '. $username. ' '. $password ;
 
-
 try {
   $conn = new PDO("mysql:host=$host;dbname=$dbName", $username, $password);
   // set the PDO error mode to exception
@@ -18,3 +17,4 @@ try {
   echo "Connection failed: " . $e->getMessage();
 }
 ?> 
+
