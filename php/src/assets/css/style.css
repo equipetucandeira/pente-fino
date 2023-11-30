@@ -1,0 +1,14 @@
+.step {
+    display: none;
+}
+
+.step.active{
+    display:flex;
+}
+
+.span-required{
+    display: none;
+    margin-top: 5px;
+    font-size: 0.75rem;
+    color:  #e63636;
+}
