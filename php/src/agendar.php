@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script src="./assets/js/agendar.js" defer></script>
+    <script src="./assets/js/tailwind.config.js" defer></script>
     <link rel="stylesheet" href="./assets/css/style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <link rel="shortcut icon" href="assets/images/icons/favicon.ico" type="image/x-icon">
     <title>Pente Fino | Agendamento</title>
@@ -75,10 +73,10 @@ bg-[url('/assets/images/bgImage-login.jpg')] bg-no-repeat bg-cover backdrop-blur
                         rounded-[15px] text-black h-[50px] md:w-[250px]">
 
                             <option value="" selected disabled>Escolha um atendente</option>
-                            <option value="1">Joãozinho</option>
-                            <option value="2">Liminha</option>
-                            <option value="3">Pedrinho</option>
-                            <option value="4">Thiaguinho</option>
+                            <option value="1">JOÃOZINHO</option>
+                            <option value="2">LIMINHA</option>
+                            <option value="3">PEDRINHO</option>
+                            <option value="4">THIAGUINHO</option>
                         </select>
                     </label>
                 </section>
@@ -91,7 +89,7 @@ bg-[url('/assets/images/bgImage-login.jpg')] bg-no-repeat bg-cover backdrop-blur
                     text-black text-[20px] font-['Inter']">
 
                         <span class="font-bold">Dia</span>
-                        <input type="date" id="dateUserSchedule" name="dateUserSchedule" required
+                        <input type="date" id="dateUserSchedule" name="dateUserSchedule" required min="" maxlength="1"
                         class="border border-black rounded-md p-2 mt-5 
                         rounded-[15px] text-black h-[50px] md:w-[250px]">
                     </label>
