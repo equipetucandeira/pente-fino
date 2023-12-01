@@ -27,7 +27,7 @@
             <img src="assets/images/logo-principal.png" alt="Logo - Pente Fino">
         </div>
 
-                <form action="" method="GET">
+                <form action="" method="POST">
 
                     <div class="step step-1 active">
                         <div class="w-fit h-fit flex flex-col items-center">
@@ -66,7 +66,7 @@
                     </div>  
                     <div class="step step-2">
                         <div class="w-fit h-fit flex flex-col items-center">
-                            <input maxlenght="11" type="text" id="userPhone" name="userPhone" placeholder="11 998888888"
+                            <input maxlenght="11" type="text" id="userPhone" name="userPhone" placeholder="(11) 99888-8888"
                             class="w-[300px] md:w-[400px] lg:w-[450px] h-[50px] md:h-[55px] lg:h-[60px] 
                                 bg-[#262d3b] rounded-[15px] mt-5 pl-5 
                                 text-white text-[15px] font-['Inter'] 
@@ -168,31 +168,6 @@
                         </div>
                     </div>
 
-                    <div class="step step-5 m-10">
-                        <div id="sucess-box" class="w-fit h-fit flex flex-col items-center" >
-                            
-                            <p class="text-green-500 font-black text-[30px] font-['Inter'] text-center"> Cadastro confirmado com sucesso!</p>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="green" class="stroke-green-400 w-[120px] md:w-[150px] lg:w-[200px] h-[55px] md:h-[55px] lg:h-[60px]">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <div class="flex space-x-4">
-                                <button id="button-home"
-                                        class="w-[120px] md:w-[150px] lg:w-[200px] h-[55px] md:h-[55px] lg:h-[60px]
-                                        bg-[#ECA72C] rounded-[16px] mt-[45px] 
-                                        text-white font-black text-18px] font-['Inter'] 
-                                        hover:bg-[#684500] ease-in-out duration-500">
-                                        <a href="/index.html"> Inicio</a>
-                                </button> 
-                                <button id="button-login"
-                                        class="w-[120px] md:w-[150px] lg:w-[200px] h-[55px] md:h-[55px] lg:h-[60px]
-                                        bg-[#ECA72C] rounded-[16px] mt-[45px] 
-                                        text-white font-black text-[18px] font-['Inter'] 
-                                        hover:bg-[#684500] ease-in-out duration-500">
-                                        <a href="/login.php"> Login</a>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
                 </form>
                 
 

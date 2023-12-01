@@ -60,6 +60,7 @@ const userMailConfirmation = document.getElementById('userEmailConfirm');
 const userPassword = document.getElementById('userPassword');
 const userPasswordConfirmation = document.getElementById('userPasswordConfirm');
 const EmailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[\w-]{2,4}$/;
+const PhoneRegex = /^\([1-9]{2}\) (?:[2-8]|9[0-9])[0-9]{3}\-[0-9]{4}$/
 let index = 0;
 
 userName.addEventListener('input',() => Validator(0));
@@ -74,7 +75,6 @@ userPassword.addEventListener('input',() => Validator(7));
 nextBtn.forEach(button=>{
     button.addEventListener('click', (e) =>{
         if(isBroken()){
-            alert('Revise suas informações');
         }else{
         changeStep('next');
         }
@@ -87,21 +87,6 @@ prevBtn.forEach(button=>{
     })
 });
 
-form.addEventListener('submit', (e)=>{
-    const inputs = [];
-    form.querySelectorAll('input').forEach(input=>{
-        const {name, value} = input;
-        inputs.push({name, value})
-    })
-    console.log(inputs)
-    form.reset();
-    let index =0;
-    const active = document.querySelector('form .step.active');
-    index = steps.indexOf(active);
-    steps[index].classList.remove('active');
-    steps[4].classList.add('active');
-
-});
 
 function isBroken(){
     if(index == 0){
@@ -168,16 +153,20 @@ function Validator(x){
            return false;
         }
     }
+
     else if(x==3){
-        if(campos[x].value.length < 10 || campos[x].value.length > 11 || campos[x].value.trim() === ''){
+        phoneNumberFormatter(campos[x]);
+        if(!PhoneRegex.test(campos[x].value)/*campos[x].value.length < 10 || campos[x].value.length > 11 */|| campos[x].value.trim() === ''){
             setError(x);
             return true;
         }else{
            removeError(x)
            return false;
         }
+    
     }
     else if(x == 4){
+        phoneNumberFormatter(campos[x]);
         if(campos[x-1].value != campos[x].value || campos[x].value.trim() === ''){
             setError(x);
             return true;
@@ -187,6 +176,7 @@ function Validator(x){
        }
     }
     else if(x == 5){
+        
         if(!EmailRegex.test(campos[x].value) || campos[x].value.trim() === ''){
             setError(x);
             return true;
@@ -250,5 +240,25 @@ function changeStep(btn){
     steps[index].classList.add('active');
     console.log(index);
 }
-    
 
+function formatPhoneNumber(value) {
+    if (!value) return value;
+  
+    // Remover caracteres não numéricos
+    const phoneNumber = value.replace(/[^\d]/g, '');
+  
+    if(phoneNumber.length ===11){
+        return `(${phoneNumber.slice(0, 2)}) ${phoneNumber.slice(2, 7)}-${phoneNumber.slice(7)}`;
+    }else if(phoneNumber.length ===10){
+        return `(${phoneNumber.slice(0, 2)}) ${phoneNumber.slice(2, 6)}-${phoneNumber.slice(6)}`;
+    }else{
+        return value;
+    }
+
+  }
+  
+
+  function phoneNumberFormatter(x){
+    const formattedInputValue = formatPhoneNumber(x.value);
+    x.value = formattedInputValue;
+  }
