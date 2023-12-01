@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,10 +14,10 @@
     <link rel="shortcut icon" href="assets/images/icons/favicon.ico" type="image/x-icon">
     <title>Pente Fino | Agendamento</title>
 </head>
-<body class="w-full h-screen max-h-fit flex flex-col items-center justify-center 
+<body class="w-full h-fit sm:h-screen  flex flex-col items-center justify-center 
 bg-[url('/assets/images/bgImage-login.jpg')] bg-no-repeat bg-cover backdrop-blur-sm font-['Inter']">
     <!---------------------------------------------- CARD PRINCIPAL -------------------------------------->
-    <main class="mt-[100px] sm:mt-0 w-11/12 md:w-10/12 lg:w-8/12 max-h-fit 
+    <main class="mt-[50px] mb-[50px] sm:mt-0 w-11/12 md:w-10/12 lg:w-8/12 max-h-fit 
     pb-10  flex flex-col justify-normal items-center bg-white bg-opacity-90  rounded-2xl relative">
         
         <div class="w-[45px] md:w-[55px] lg:w-[60px] top-5 md:top-8 lg:top-10 left-5 md:left-8 lg:left-10 absolute hover:scale-105 ease-in-out duration-[400ms]">
@@ -41,13 +41,17 @@ bg-[url('/assets/images/bgImage-login.jpg')] bg-no-repeat bg-cover backdrop-blur
             class="w-[90%] self-center sm:flex justify-evenly">
                 <!------------------------------------- SERVIÇOS E ATENDENTES ------------------------->
                 <section
-                class="flex flex-col max-h-fit">
+                class="flex flex-col max-h-fit md:h-[280px] md:gap-[20px] md:mb-[20px]">
+
                     <label
                     class="flex flex-col mb-10
                     text-black text-[20px] font-['Inter']">
+                    
                         <span class="font-bold">Serviço</span>
                         <select name="serviceUserSchedule" id="serviceUserSchedule" required
-                        class="border border-black rounded-md p-2 mt-5">
+                        class="border border-black rounded-md p-2 mt-5
+                        rounded-[15px] text-black h-[50px] md:w-[250px]">
+
                             <option value="" selected disabled>Escolha um serviço</option>
                             <optgroup label="CORTES">
                                 <option value="1">CORTE COMPLETO</option>
@@ -64,9 +68,12 @@ bg-[url('/assets/images/bgImage-login.jpg')] bg-no-repeat bg-cover backdrop-blur
                     <label
                     class="flex flex-col mb-10
                     text-black text-[20px] font-['Inter']">
+
                         <span class="font-bold">Atendente</span>
                         <select name="attendantUserSchedule" id="attendantUserSchedule" required
-                        class="border border-black rounded-md p-2 mt-5">
+                        class="border border-black rounded-md p-2 mt-5
+                        rounded-[15px] text-black h-[50px] md:w-[250px]">
+
                             <option value="" selected disabled>Escolha um atendente</option>
                             <option value="1">Joãozinho</option>
                             <option value="2">Liminha</option>
@@ -78,20 +85,26 @@ bg-[url('/assets/images/bgImage-login.jpg')] bg-no-repeat bg-cover backdrop-blur
 
                 <!------------------------------------- DATA E HORA ------------------------->
                 <section
-                class="flex flex-col max-h-fit">
+                class="flex flex-col max-h-fit md:h-[280px] md:gap-[20px] md:mb-[20px]">
                     <label
                     class="flex flex-col mb-10
                     text-black text-[20px] font-['Inter']">
+
                         <span class="font-bold">Dia</span>
                         <input type="date" id="dateUserSchedule" name="dateUserSchedule" required
-                        class="border border-black rounded-md p-2 mt-5">
+                        class="border border-black rounded-md p-2 mt-5 
+                        rounded-[15px] text-black h-[50px] md:w-[250px]">
                     </label>
+
                     <label
                     class="flex flex-col mb-10
                     text-black text-[20px] font-['Inter']">
+
                         <span class="font-bold">Horário</span>
                         <select name="timeUserSchedule" id="timeUserSchedule" required
-                        class="border border-black rounded-md p-2 mt-5">
+                        class="border border-black rounded-md p-2 mt-5
+                        rounded-[15px] text-black h-[50px] md:w-[250px]">
+
                             <option value="" selected disabled>Escolha um horário</option>
                             <optgroup label="MANHÃ">
                                 <option value="1">9:00</option>
