@@ -1,5 +1,4 @@
 <?php
-
 include 'config.php';
 
 $firstName = $_POST['userName'];
