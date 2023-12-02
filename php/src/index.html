@@ -21,20 +21,20 @@
             <!-- Menu Hamburguer visível apenas em telas pequenas -->
             <div class="h-100px md:hidden flex justify-evenly items-center z-50	">
 
-                <a href="#">
-                    <img src="./assets/images/logo-principal.png" alt="Logo Pente-Fino" width="100" height="100">
-                </a>
-
-                <a href="#">
-                    <img src="./assets/images/icons/user.png" width="32" height="32" alt="Profile">
-                </a>
-
                 <div class=" mobile-menu flex flex-col items-center cursor-pointer h-100px justify-center">
 
                     <div class="line1 w-10 h-1 bg-black mb-1"></div>
                     <div class="line2 w-10 h-1 bg-black mb-1"></div>
                     <div class="line3 w-10 h-1 bg-black"></div>
                 </div>
+
+                <a href="#" class="mt-[10px]">
+                    <img src="./assets/images/logo-principal.png" alt="Logo Pente-Fino" width="100" height="100">
+                </a>
+
+                <a href="#">
+                    <img src="./assets/images/icons/user.png" width="32" height="32" alt="Profile">
+                </a>
             </div>
 
             <!-- Menu de Navegação para telas médias e grandes -->
@@ -51,8 +51,8 @@
                         Sobre
                     </a>
                 </li>
-                <li>
-                    <a href="#">
+                <li class="flex">
+                    <a href="#" class="mt-[10px]">
                         <img src="./assets/images/logo-principal.png" alt="Logo Pente-Fino" width="100" height="100">
                     </a>
                 </li>
@@ -106,14 +106,14 @@
                 A Agenda que vai até você!
             </h1>
 
-            <a href="#" class="w-full">
-                <button
-                class="w-full mt-9 text-4xl text-white border border-solid border-white p-4 
-                hover:border-ycol hover:text-ycol ease-in-out duration-[400ms]">
+            <button
+            class="w-full mt-9 text-4xl text-white border border-solid border-white p-4 
+            hover:border-ycol hover:text-ycol ease-in-out duration-[400ms]">
 
+                <a href="#" class="w-full h-[100%]">
                     Agende agora
-                </button>
-            </a>
+                </a>
+            </button>
         </div>
     </section>
 
@@ -370,10 +370,119 @@
             </div>
         </div>
     </section>
+    <!------------------------- O QUE FALAM DE NÓS -------------------------->
+    <section
+    class="w-[100%] h-fit lg:h-[100vh] flex flex-col mt-[100px] bg-[url('assets/images/bgImage-quemsomos.png')] bg-cover bg-no-repeat">
 
+        <section
+        class="flex flex-col w-[100%] h-fit">
+            <h1 id="title-quemsomos"
+            class="mt-[20px] self-center font-bold
+            text-white text-[40px] sm:text-[70px] md:text-[90px] lg:text-[100px] font-['Smythe'] drop-shadow-2xl">
+                O que falam sobre nós?
+            </h1>
+
+            <section
+            class="flex flex-col items-center gap-[20px] pb-[50px] lg:flex-row md:justify-evenly w-[100%] h-fit mt-[6%]">
+
+                <div
+                class="w-[85%] md:w-[70%] lg:w-[30%] h-fit pb-[20px] flex flex-col 
+                bg-zinc-300 bg-opacity-90 rounded-[20px]">
+
+                    <div
+                    class="flex justify-evenly mt-[20px] sm:mb-[20px]">
+                        <img src="assets/images/icons/star.png" alt="Estrela (Star)"
+                        class="w-[40px] sm:w-[46px]">
+                        <img src="assets/images/icons/star.png" alt="Estrela (Star)"
+                        class="w-[40px] sm:w-[46px]">
+                        <img src="assets/images/icons/star.png" alt="Estrela (Star)"
+                        class="w-[40px] sm:w-[46px]">
+                        <img src="assets/images/icons/star.png" alt="Estrela (Star)"
+                        class="w-[40px] sm:w-[46px]">
+                        <img src="assets/images/icons/star.png" alt="Estrela (Star)"
+                        class="w-[40px] sm:w-[46px]">
+                    </div>
+
+                    <p 
+                    class="flex flex-col self-center w-[80%] mt-[20px] mb-[0]
+                    text-center text-[22px] font-['Inter']">
+                        “Sou cliente do Pente Fino a mais de 1 ano e recomendo demais! 
+                        Ambiente sempre limpo e super agradável. Nota 10!”
+                        <br>
+                        <span
+                        class="font-black lg:mt-[30px]">
+                            - Pedrinho
+                        </span>
+                    </p>
+                </div>
+
+                <div
+                class="w-[85%] md:w-[70%] lg:w-[30%] h-fit pb-[20px] flex flex-col 
+                bg-zinc-300 bg-opacity-90 rounded-[20px]">
+
+                    <div
+                    class="flex justify-evenly mt-[20px] sm:mb-[20px]">
+                        <img src="assets/images/icons/star.png" alt="Estrela (Star)"
+                        class="w-[40px] sm:w-[46px]">
+                        <img src="assets/images/icons/star.png" alt="Estrela (Star)"
+                        class="w-[40px] sm:w-[46px]">
+                        <img src="assets/images/icons/star.png" alt="Estrela (Star)"
+                        class="w-[40px] sm:w-[46px]">
+                        <img src="assets/images/icons/star.png" alt="Estrela (Star)"
+                        class="w-[40px] sm:w-[46px]">
+                        <img src="assets/images/icons/star.png" alt="Estrela (Star)"
+                        class="w-[40px] sm:w-[46px]">
+                    </div>
+
+                    <p 
+                    class="flex flex-col self-center text-center text-[22px] w-[80%] mt-[20px] mb-[0] font-['Inter']">
+                        “Sou cliente do Pente Fino a mais de 1 ano e recomendo demais! 
+                        Ambiente sempre limpo e super agradável. Nota 10!”
+                        <br>
+                        <span
+                        class="font-black lg:mt-[30px]">
+                            - Pedrinho
+                        </span>
+                    </p>
+                </div>
+
+                <div
+                class="w-[85%] md:w-[70%] lg:w-[30%] h-fit pb-[20px] flex flex-col 
+                bg-zinc-300 bg-opacity-90 rounded-[20px]">
+
+                    <div
+                    class="flex justify-evenly mt-[20px] sm:mb-[20px]">
+                        <img src="assets/images/icons/star.png" alt="Estrela (Star)"
+                        class="w-[40px] sm:w-[46px]">
+                        <img src="assets/images/icons/star.png" alt="Estrela (Star)"
+                        class="w-[40px] sm:w-[46px]">
+                        <img src="assets/images/icons/star.png" alt="Estrela (Star)"
+                        class="w-[40px] sm:w-[46px]">
+                        <img src="assets/images/icons/star.png" alt="Estrela (Star)"
+                        class="w-[40px] sm:w-[46px]">
+                        <img src="assets/images/icons/star.png" alt="Estrela (Star)"
+                        class="w-[40px] sm:w-[46px]">
+                    </div>
+
+                    <p 
+                    class="flex flex-col self-center text-center text-[22px] w-[80%] mt-[20px] mb-[0] font-['Inter']">
+                        “Sou cliente do Pente Fino a mais de 1 ano e recomendo demais! 
+                        Ambiente sempre limpo e super agradável. Nota 10!”
+                        <br>
+                        <span
+                        class="font-black lg:mt-[30px]">
+                            - Pedrinho
+                        </span>
+                    </p>
+                </div>
+
+                
+            </section>
+        </section>
+    </section>
     <!------------------------------RODAPÉ--------------------------------->
     <footer 
-    class="w-full h-[620px] mt-auto bottom-0 flex flex-col ">
+    class="w-full h-[620px] mt-[500px] bottom-0 flex flex-col ">
 
         <section 
         class="w-full h-[435px] max-h-fit bg-[#232323]
