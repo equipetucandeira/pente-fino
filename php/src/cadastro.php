@@ -23,9 +23,6 @@ function validateType($dataInput, $typeInput)
         case 'email':
             return filter_var($dataInput, FILTER_VALIDATE_EMAIL) !== false;
             break;
-        case 'date':
-            return filter_var($dataInput, FILTER_VALIDATE_EMAIL) !== false;
-            break;
         default:
             return true; //Qualquer tipo valido, mas nao especificado
     }
@@ -42,26 +39,33 @@ function validateRegex($dataInput, $pattern)
 }
 
 $options = [
-    'cost' => 12, // Custo do algoritmo (quanto maior, mais seguro, mas mais lento)
+    'cost' => 9, // Custo do algoritmo (quanto maior, mais seguro, mas mais lento)
 ];
+$phoneRegex = "/^\([1-9]{2}\) (?:[2-8]|9[0-9])[0-9]{3}\-[0-9]{4}$/";
+$dateRegex = "/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/";
 
-$firstName = validateLenght(cleaningInput($_POST['userName']),3,30);
-$lastName =validateLenght(cleaningInput($_POST['userLastName']),1,40);
-$birth = $_POST['userBirth'];
+$firstName = validateLength(cleaningInput($_POST['userName']),3,30);
+$lastName =validateLength(cleaningInput($_POST['userLastName']),1,40);
+$birth = date('Y-m-d', strtotime($_POST['userBirth']));
 $pass = password_hash($_POST['userPasswordConfirm'],PASSWORD_BCRYPT,$options);
-$phone = validateLenght($_POST['userPhoneConfirm'],14,15);
+$phone = validateRegex($_POST['userPhoneConfirm'],$phoneRegex);
 $email = validateType($_POST['userEmailConfirm'], 'email');
+$defaultRank = 3;
 
-$stmt = $conn->prepare("INSERT INTO TB_USERS(USER_FIRSTNAME, USER_LASTNAME, USER_BIRTH, USER_PHONE, USER_EMAIL, USER_PASSWORD) VALUES (:firstName, :lastName, :birth, :phone, :email, :pass");
+echo $fistName;
+echo $email;
+/*
+$stmt = $conn->prepare("INSERT INTO TB_USERS(USER_FIRSTNAME, USER_LASTNAME, USER_BIRTH, USER_PHONE, USER_EMAIL, USER_PASSWORD, USER_RANK) VALUES (:firstName, :lastName, :birth, :phone, :email, :pass, :urank)");
 
 $stmt->bindParam(':firstName', $firstName);
 $stmt->bindParam(':lastName', $lastName);
 $stmt->bindParam(':birth', $birth);
 $stmt->bindParam(':phone', $phone);
 $stmt->bindParam(':email', $email);
+$stmt->bindParam(':urank', $defaultRank);
 $stmt->bindParam(':pass', $pass);
 
 $stmt->execute();
-
+*/
 
 ?>

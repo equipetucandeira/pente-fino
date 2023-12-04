@@ -70,7 +70,7 @@ userMail.addEventListener('input',() => Validator(5));
 userMailConfirmation.addEventListener('input',() => Validator(6));
 userPassword.addEventListener('input',() => Validator(7));
 
-
+console.log(userName);
 nextBtn.forEach(button=>{
     button.addEventListener('click', (e) =>{
         if(isBroken()){
@@ -256,7 +256,6 @@ function formatPhoneNumber(value) {
 
   }
   
-
   function phoneNumberFormatter(x){
     const formattedInputValue = formatPhoneNumber(x.value);
     x.value = formattedInputValue;
