@@ -41,6 +41,7 @@ const mobileNavbar = new MobileNavBar(
 );
 
 mobileNavbar.init();
+<<<<<<< HEAD
 
 
 const steps= Array.from(document.querySelectorAll('form .step'));
@@ -262,3 +263,5 @@ function formatPhoneNumber(value) {
     const formattedInputValue = formatPhoneNumber(x.value);
     x.value = formattedInputValue;
   }
+=======
+>>>>>>> 4ed38f2719c7601b50473dbc83c7d1717262f4d5
