@@ -49,28 +49,20 @@ const form= document.querySelector('form');
 const completionMessage = document.getElementById('sucess-box');
 const campos = document.querySelectorAll('.required');
 const spans = document.querySelectorAll('.span-required');
-const userName = document.getElementById('userName');
-const userLastName = document.getElementById('userLastName');
-const userBirth = document.getElementById('userBirth');
-const userPhone = document.getElementById('userPhone');
-const userPhoneConfirmation = document.getElementById('userPhoneConfirm');
-const userMail = document.getElementById('userEmail');
-const userMailConfirmation = document.getElementById('userEmailConfirm');
-const userPassword = document.getElementById('userPassword');
 const userPasswordConfirmation = document.getElementById('userPasswordConfirm');
 const EmailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[\w-]{2,4}$/;
 const PhoneRegex = /^\([1-9]{2}\) (?:[2-8]|9[0-9])[0-9]{3}\-[0-9]{4}$/
 let index = 0;
 
-userName.addEventListener('input',() => Validator(0));
-userLastName.addEventListener('input',() => Validator(1));
-userPhone.addEventListener('input',() => Validator(3));
-userPhoneConfirmation.addEventListener('input',() => Validator(4));
-userMail.addEventListener('input',() => Validator(5));
-userMailConfirmation.addEventListener('input',() => Validator(6));
-userPassword.addEventListener('input',() => Validator(7));
+campos[0].addEventListener('input',() => Validator(0));
+campos[1].addEventListener('input',() => Validator(1));
+campos[3].addEventListener('input',() => Validator(3));
+campos[4].addEventListener('input',() => Validator(4));
+campos[5].addEventListener('input',() => Validator(5));
+campos[6].addEventListener('input',() => Validator(6));
+campos[7].addEventListener('input',() => Validator(7));
 
-console.log(userName);
+
 nextBtn.forEach(button=>{
     button.addEventListener('click', (e) =>{
         if(isBroken()){
@@ -126,6 +118,7 @@ function isBroken(){
 
 function Validator(x){
     if(x == 0){
+        
         if(campos[x].value.length < 3 || campos[x].value.trim() === ''){
             setError(x);
             return true;
@@ -133,6 +126,7 @@ function Validator(x){
            removeError(x)
            return false;
         }
+        
     }
     else if(x==1){
         if(campos[x].value.length < 1 || campos[x].value.trim() === ''){
