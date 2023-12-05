@@ -1,6 +1,8 @@
 <?php
+
+include 'config.php';
+?>
+
     
 
 
-
-?>
