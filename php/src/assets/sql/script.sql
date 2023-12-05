@@ -27,7 +27,16 @@ CREATE TABLE `TB_USERS` (
   `USER_RANK` smallint(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+ALTER TABLE `TB_USERS` MODIFY `USER_PASSWORD` varchar(60) NOT NULL;
+ALTER TABLE `TB_USERS` ADD `USER_PHONE` varchar(20) NOT NULL; 
+ALTER TABLE `TB_USERS` MODIFY `USER_PHONE` varchar(20) NOT NULL; 
 
+INSERT INTO `TB_USERS` ( `USER_FIRSTNAME`, `USER_LASTNAME`, `USER_BIRTH`, `USER_EMAIL`, `USER_PASSWORD`, `USER_RANK`) VALUES
+( 'John', 'Doe', '1990-05-15', 'john.doe@example.com', 'hashed_1', 1),
+( 'Jane', 'Smith', '1985-08-22', 'jane.smith@example.com', 'hashed_2', 3),
+( 'Bob', 'Johnson', '1993-02-10', 'bob.johnson@example.com', 'hashed_3', 3),
+( 'Alice', 'Williams', '1988-11-30', 'alice.williams@example.com', 'hashed_4', 3),
+( 'Charlie', 'Brown', '1995-07-05', 'charlie.brown@example.com', 'hashed_5', 2);
 
 ALTER TABLE `TB_SCHEDULES`
   ADD PRIMARY KEY (`SCHEDULE_ID`),
