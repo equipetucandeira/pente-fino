@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <script src="./assets/js/index.js" defer></script>
     <script src="./assets/js/tailwind.config.js" defer></script>
     <link rel="stylesheet" href="./assets/css/style.css">
+
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon">
     <title>Pente Fino</title>
 </head>
 
@@ -17,65 +20,143 @@
         <header>
             <!-- Menu Hamburguer visível apenas em telas pequenas -->
             <div class="h-100px md:hidden flex justify-evenly items-center z-50	">
-                <a href="#"><img src="./assets/images/logo-principal.png" alt="Logo Pente-Fino" width="100" height="100"></a>
+
                 <div class=" mobile-menu flex flex-col items-center cursor-pointer h-100px justify-center">
+
                     <div class="line1 w-10 h-1 bg-black mb-1"></div>
                     <div class="line2 w-10 h-1 bg-black mb-1"></div>
                     <div class="line3 w-10 h-1 bg-black"></div>
                 </div>
-                <a href="#"><img src="./assets/images/icon/user.png" width="32" height="32" alt="Profile"></a>
 
+                <a href="#" class="mt-[10px]">
+                    <img src="./assets/images/logo-principal.png" alt="Logo Pente-Fino" width="100" height="100">
+                </a>
+
+                <a href="#">
+                    <img src="./assets/images/icons/user.png" width="32" height="32" alt="Profile">
+                </a>
             </div>
 
-
             <!-- Menu de Navegação para telas médias e grandes -->
-            <ul
-                class="hidden md:flex w-full justify-evenly h-100px items-center p-5 font-['Sancreek'] lg:text-3xl text-2xl text-white nav-list">
-                <li><a href="index.html" class="hover:text-yellow-500 transition">Página Inicial</a></li>
-                <li><a href="#" class="hover:text-yellow-500 transition">Sobre</a></li>
-                <li><a href="#"><img src="./assets/images/logo-principal.png" alt="Logo Pente-Fino" width="100" height="100"></a>
+            <ul class="hidden w-full justify-evenly h-100px items-center p-5 font-['Sancreek'] text-2xl text-white
+            md:flex lg:text-3xl nav-list">
+                <li>
+                    <a href="index.html" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
+                        Página Inicial
+                    </a>
                 </li>
-                <li><a href="#" class="hover:text-yellow-500 transition">Agendar</a></li>
-                <li><a href="#" class="text-yellow-500 hover:text-black transition">Login</a></li>
-                <li class="absolute right-5"><a href="#"><img src="./assets/images/icon/user.png" width="32" height="32"
-                            alt="Profile"></a></li>
+                <li>
+                    <a href="#sobre" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
+                        Sobre
+                    </a>
+                </li>
+                <li class="flex">
+                    <a href="#" class="mt-[10px]">
+                        <img src="./assets/images/logo-principal.png" alt="Logo Pente-Fino" width="100" height="100">
+                    </a>
+                </li>
+                <li>
+                    <a href="#agendar" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
+                        Agendar
+                    </a>
+                </li>
+                <li>
+                    <a href="login.html" class="text-yellow-500 hover:text-white ease-in-out duration-[400ms]">
+                        Login
+                    </a>
+                </li>
+                <li class="absolute right-5"><a href="#">
+                        <img src="./assets/images/icons/user.png" width="32" height="32" alt="Profile">
+                    </a>
+                </li>
             </ul>
 
             <!-- Menu Responsivo para telas pequenas -->
-            <ul class="md:hidden flex flex-col items-center bg-transparent backdrop-blur text-white w-full absolute top-h-100px  transition ease-in-out delay-150 transform scale-y-0 font-['Sancreek'] text-3xl h-h-calc justify-around"
-                id="mobileNav">
-                <li><a href="index.html" class="hover:text-yellow-500 transition">Página Inicial</a></li>
-                <li><a href="#" class="py-2 hover:text-yellow-500 transition">Sobre</a></li>
-                <li><a href="#" class="py-2 hover:text-yellow-500 transition">Agendar</a></li>
-                <li><a href="#" class="py-2 hover:text-yellow-500 transition">Login</a></li>
+            <ul id="mobileNav" class="md:hidden flex flex-col items-center bg-transparent backdrop-blur text-white w-full absolute top-h-100px  
+            transition ease-in-out delay-150 transform scale-y-0 font-['Sancreek'] text-3xl h-h-calc justify-around">
+
+                <li>
+                    <a href="index.html" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
+                        Página Inicial
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="py-2 hover:text-yellow-500 ease-in-out duration-[400ms]">
+                        Sobre
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="py-2 hover:text-yellow-500 ease-in-out duration-[400ms]">
+                        Agendar
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="py-2 hover:text-yellow-500 ease-in-out duration-[400ms]">
+                        Login
+                    </a>
+                </li>
             </ul>
         </header>
+
         <div class="flex flex-col h-h-calc justify-center font-['Sancreek'] ml-percent-10 w-1/2">
-            <h1 class="md:text-7xl text-5xl text-white">A Agenda que vai até você!</h1>
-            <a href="" class="w-full"><button
-                    class="w-full mt-9 text-4xl text-white border border-solid border-white p-4 hover:border-ycol hover:text-ycol transition-all">Agende
-                    agora</button></a>
+
+            <h1 class="md:text-7xl text-5xl text-white">
+                A Agenda que vai até você!
+            </h1>
+
+            <button class="w-full mt-9 text-4xl text-white border border-solid border-white p-4 
+            hover:border-ycol hover:text-ycol ease-in-out duration-[400ms]">
+
+                <a href="#" class="w-full h-[100%]">
+                    Agende agora
+                </a>
+            </button>
         </div>
     </section>
 
     <!--------------------------QUEM SOMOS ?------------------------------->
-    <section class="border-4 border-black flex lg:flex-row m-4 lg:m-12 flex-col ">
-        <div class="flex flex-col lg:pl-14 xl:pl-36 justify-center items-center xl:items-start gap-4 p-4 lg:p-0">
-            <div class="text-center text-black text-[50px] md:text-[80px] lg:text-[60px]  font-normal font-['Smythe']">
-                Quem somos?</div>
-            <div class="text-black text-center text-[25.5px] md:text-[35px] font-normal font-['Smythe']">Bem-vindo à
-                Barbearia Pente Fino!</div>
-            <div class="text-black  text-[25px] md:text-[30px] font-normal font-['Smythe']">Somos uma equipe apaixonada
-                por proporcionar cortes precisos e cuidados personalizados, combinando tradição e modernidade. </div>
+    <section class="border-4 border-black flex flex-col lg:flex-row m-4 lg:m-12 ">
+
+        <div class="flex flex-col justify-center items-center 
+        gap-4 p-4
+        lg:pl-14 xl:pl-36 xl:items-start lg:p-0">
+
+            <div id="sobre"
+                class="text-center text-black text-[50px] md:text-[80px] lg:text-[60px]  font-normal font-['Smythe']">
+
+                Quem somos?
+            </div>
+
+            <div class="text-black text-center text-[25.5px] md:text-[35px] font-normal font-['Smythe']">
+
+                Bem-vindo à Barbearia Pente Fino!
+            </div>
+
+            <div class="text-black  text-[25px] md:text-[30px] font-normal font-['Smythe']">
+
+                Somos uma equipe apaixonada por proporcionar cortes precisos e cuidados personalizados, combinando
+                tradição e modernidade.
+            </div>
+
             <div>
-                <span class="text-black text-[25px] md:text-[30px] font-normal font-['Smythe']">Na Barbearia Estilo
-                    Clássico, não apenas cortamos cabelo, mas criamos memórias através de cada corte. </span>
-                <span
-                    class="text-amber-400 text-[25px] md:text-[30px] font-normal font-['Smythe'] underline">Visite-nos</span><span
-                    class="text-black text-[25px] md:text-[30px] font-normal font-['Smythe']"> para transformar sua
-                    rotina de cuidados pessoais em momentos especiais.</span>
+                <span class="text-black text-[25px] md:text-[30px] font-normal font-['Smythe']">
+
+                    Na Barbearia Estilo Clássico, não apenas cortamos cabelo, mas criamos memórias através de cada
+                    corte.
+                </span>
+
+                <span class="text-amber-400 text-[25px] md:text-[30px] font-normal font-['Smythe'] underline">
+
+                    Visite-nos
+                </span>
+
+                <span class="text-black text-[25px] md:text-[30px] font-normal font-['Smythe']">
+
+                    para transformar sua rotina de cuidados pessoais em momentos especiais.
+                </span>
             </div>
         </div>
+
         <div class="hidden lg:block">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="550"
                 zoomAndPan="magnify" viewBox="0 0 450 449.999984" height="600" preserveAspectRatio="xMidYMid meet"
@@ -214,43 +295,159 @@
     <!--------------------------AGENDAMENTOS----------------------------->
 
     <section class="flex flex-col justify-center items-center md:h-h-calc mt-10">
-        <h1 class="md:text-8xl text-6xl font-['Smythe'] mb-5 font-bold ">Agendamentos</h1>
+
+        <h1 id="agendar" class="md:text-8xl text-6xl font-['Smythe'] mb-5 font-bold">
+            Agendamentos
+        </h1>
+
         <div class="w-percent-80 border border-solid border-black p-10 flex justify-around lg:flex-row flex-col">
+
             <div class="flex flex-col">
                 <div class="mb-10">
-                    <h2 class="font-['Smythe'] text-5xl mb-5 font-bold">Agende seu Estilo!</h2>
+
+                    <h2 class="font-['Smythe'] text-5xl mb-5 font-bold">
+
+                        Agende seu Estilo!
+                    </h2>
+
                     <ul class="list-disc ml-percent-10">
-                        <li class="font-['Smythe'] text-2xl">Marque Seu horário para um corte impecável</li>
-                        <li class="font-['Smythe'] text-2xl">Escolha o dia e a hora que se encaixam no seu ritmo</li>
+                        <li class="font-['Smythe'] text-2xl">
+                            Marque Seu horário para um corte impecável
+                        </li>
+                        <li class="font-['Smythe'] text-2xl">
+                            Escolha o dia e a hora que se encaixam no seu ritmo
+                        </li>
                     </ul>
                 </div>
+
                 <div>
-                    <h2 class="font-['Smythe'] text-5xl mb-5 font-bold">Corte sem complicações!</h2>
+                    <h2 class="font-['Smythe'] text-5xl mb-5 font-bold">
+
+                        Corte sem complicações!
+                    </h2>
+
                     <ul class="list-disc ml-percent-10">
-                        <li class="font-['Smythe'] text-2xl">Mais tempo para você, menos tempo esperando</li>
-                        <li class="font-['Smythe'] text-2xl">Agende seu corte de cabelo ou barba online, sem sair de
+                        <li class="font-['Smythe'] text-2xl">
+                            Mais tempo para você, menos tempo esperando
+                        </li>
+                        <li class="font-['Smythe'] text-2xl">
+                            Agende seu corte de cabelo ou barba online, sem sair de
                             casa!
                         </li>
-                        <li class="font-['Smythe'] text-2xl">Nosso sistema de agendamento é simples e intuitivo</li>
+                        <li class="font-['Smythe'] text-2xl">
+                            Nosso sistema de agendamento é simples e intuitivo
+                        </li>
                     </ul>
                 </div>
             </div>
+
             <div class="flex flex-col justify-center mt-10 items-center">
+
                 <h2
                     class="font-['Smythe'] [text-shadow:_3px_3px_3px_rgb(236_167_44_/_70%)] md:text-7xl text-5xl mb-10 text-center font-bold">
-                    Está esperando <br> o quê?</h2>
-                <a href="" class="w-percent-80 flex justify-center items-center"><button
-                        class="w-full bg-ycol p-5 text-white rounded-xl font-['Smythe'] font-bold text-2xl hover:bg-slate-50 hover:text-ycol transition">Agende
-                        um horário</button></a>
+
+                    Está esperando <br> o quê?
+                </h2>
+
+                <a href="#" class="w-percent-80 flex justify-center items-center">
+
+                    <button class="w-full bg-ycol p-5 text-white rounded-xl font-['Smythe'] font-bold text-2xl
+                    border border-solid border-ycol 
+                    hover:bg-transparent hover:text-ycol 
+                    ease-in-out duration-[400ms]">
+
+                        Agende um horário
+                    </button>
+                </a>
             </div>
         </div>
     </section>
+    <!------------------------- O QUE FALAM DE NÓS -------------------------->
+    <section
+        class="w-[100%] h-fit lg:h-[100vh] flex flex-col mt-[100px] bg-[url('./assets/images/bgImage-quemsomos.png')] bg-cover bg-no-repeat">
+
+        <section class="flex flex-col w-[100%] h-fit">
+            <h1 id="title-quemsomos" class="mt-[20px] self-center font-bold
+            text-white text-[40px] sm:text-[70px] md:text-[90px] lg:text-[100px] font-['Smythe'] drop-shadow-2xl">
+                O que falam sobre nós?
+            </h1>
+
+            <section
+                class="flex flex-col items-center gap-[20px] pb-[50px] lg:flex-row md:justify-evenly w-[100%] h-fit mt-[6%]">
+
+                <div class="w-[85%] md:w-[70%] lg:w-[30%] h-fit pb-[20px] flex flex-col 
+                bg-zinc-300 bg-opacity-90 rounded-[20px]">
+
+                    <div class="flex justify-evenly mt-[20px] sm:mb-[20px]">
+                        <img src="./assets/images/icon/star.png" alt="Estrela (Star)" class="w-[40px] sm:w-[46px]">
+                        <img src="./assets/images/icon/star.png" alt="Estrela (Star)" class="w-[40px] sm:w-[46px]">
+                        <img src="./assets/images/icon/star.png" alt="Estrela (Star)" class="w-[40px] sm:w-[46px]">
+                        <img src="./assets/images/icon/star.png" alt="Estrela (Star)" class="w-[40px] sm:w-[46px]">
+                        <img src="./assets/images/icon/star.png" alt="Estrela (Star)" class="w-[40px] sm:w-[46px]">
+                    </div>
+
+                    <p class="flex flex-col self-center w-[80%] mt-[20px] mb-[0]
+                    text-center text-[22px] font-['Inter']">
+                        “Sou cliente do Pente Fino a mais de 1 ano e recomendo demais!
+                        Ambiente sempre limpo e super agradável. Nota 10!”
+                        <br>
+                        <span class="font-black lg:mt-[30px]">
+                            - Pedrinho
+                        </span>
+                    </p>
+                </div>
+
+                <div class="w-[85%] md:w-[70%] lg:w-[30%] h-fit pb-[20px] flex flex-col 
+                bg-zinc-300 bg-opacity-90 rounded-[20px]">
+
+                    <div class="flex justify-evenly mt-[20px] sm:mb-[20px]">
+                        <img src="./assets/images/icon/star.png" alt="Estrela (Star)" class="w-[40px] sm:w-[46px]">
+                        <img src="./assets/images/icon/star.png" alt="Estrela (Star)" class="w-[40px] sm:w-[46px]">
+                        <img src="./assets/images/icon/star.png" alt="Estrela (Star)" class="w-[40px] sm:w-[46px]">
+                        <img src="./assets/images/icon/star.png" alt="Estrela (Star)" class="w-[40px] sm:w-[46px]">
+                        <img src="./assets/images/icon/star.png" alt="Estrela (Star)" class="w-[40px] sm:w-[46px]">
+                    </div>
 
 
+                    <p
+                        class="flex flex-col self-center text-center text-[22px] w-[80%] mt-[20px] mb-[0] font-['Inter']">
+                        “Sou cliente do Pente Fino a mais de 1 ano e recomendo demais!
+                        Ambiente sempre limpo e super agradável. Nota 10!”
+                        <br>
+                        <span class="font-black lg:mt-[30px]">
+                            - Pedrinho
+                        </span>
+                    </p>
+                </div>
 
+                <div class="w-[85%] md:w-[70%] lg:w-[30%] h-fit pb-[20px] flex flex-col 
+                bg-zinc-300 bg-opacity-90 rounded-[20px]">
+
+                    <div class="flex justify-evenly mt-[20px] sm:mb-[20px]">
+                        <img src="./assets/images/icon/star.png" alt="Estrela (Star)" class="w-[40px] sm:w-[46px]">
+                        <img src="./assets/images/icon/star.png" alt="Estrela (Star)" class="w-[40px] sm:w-[46px]">
+                        <img src="./assets/images/icon/star.png" alt="Estrela (Star)" class="w-[40px] sm:w-[46px]">
+                        <img src="./assets/images/icon/star.png" alt="Estrela (Star)" class="w-[40px] sm:w-[46px]">
+                        <img src="./assets/images/icon/star.png" alt="Estrela (Star)" class="w-[40px] sm:w-[46px]">
+                    </div>
+
+                    <p
+                        class="flex flex-col self-center text-center text-[22px] w-[80%] mt-[20px] mb-[0] font-['Inter']">
+                        “Sou cliente do Pente Fino a mais de 1 ano e recomendo demais!
+                        Ambiente sempre limpo e super agradável. Nota 10!”
+                        <br>
+                        <span class="font-black lg:mt-[30px]">
+                            - Pedrinho
+                        </span>
+                    </p>
+                </div>
+
+
+            </section>
+        </section>
+    </section>
     <!------------------------------RODAPÉ--------------------------------->
-
-    <footer class="w-full h-[620px] mt-auto bottom-0 flex flex-col ">
+    <footer class="w-full h-[620px] mt-[500px] bottom-0 flex flex-col ">
 
         <section class="w-full h-[435px] max-h-fit bg-[#232323]
         flex flex-col md:flex-row items-center justify-evenly">
@@ -261,11 +458,13 @@
 
                 <h3 class="text-white font-extrabold font-['Inter']
                 text-[20px] md:text-[30px] lg:text-[38px]">
+
                     ENTRE EM CONTATO
                 </h3>
                 <br>
                 <p class="text-white font-normal font-['Inter']
                 text-[20px] md:text-[30px] lg:text-[36px]">
+
                     Av. Salgado Filho,
                     <br>
                     3501 - Centro,
@@ -282,6 +481,7 @@
 
                 <h3 class="text-white font-extrabold font-['Inter']
                 text-[20px] md:text-[30px] lg:text-[36px]">
+
                     AGENDE UM HORÁRIO
                 </h3>
                 <br>
@@ -291,8 +491,9 @@
                 text-[#ECA72C] font-bold font-['Inter']
                 hover:text-white hover:bg-[#ECA72C] ease-in-out duration-300">
 
-                    <a href="login.php" class="w-[100%] h-[100%]
+                    <a href="#" class="w-[100%] h-[100%]
                     text-[20px] md:text-[30px]">
+
                         AGENDAR
                     </a>
                 </button>
@@ -304,10 +505,11 @@
 
             <span class="text-white font-light font-['Inter'] italic 
             text-[20px] md:text-[32px] lg:text-[40px]">
+
                 © 2023 Pente Fino Barber Shop
             </span>
         </section>
     </footer>
 </body>
-</html>
 
+</html>
