@@ -262,4 +262,4 @@ function phoneNumberFormatter(x) {
     x.value = formattedInputValue;
 }
 
-console.log('batata');
+
