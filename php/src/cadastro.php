@@ -64,6 +64,6 @@ else{
     $stmt->bindValue(':pass', $pass, PDO::PARAM_STR);
     
     $stmt->execute();
-    header('Location: login.html');
+    header('Location: login-form.php');
     exit();
 }

@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-    <script src="./assets/js/index.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./assets/js/login.js" defer></script>
     <script src="./assets/js/tailwind.config.js" defer></script>
     <link rel="stylesheet" href="./assets/css/style.css">
 
@@ -56,7 +57,7 @@
             <button type="submit" class="w-[300px] md:w-[500px] lg:w-[550px] h-[60px] md:h-[65px] lg:h-[70px]
             bg-[#ECA72C] rounded-[18px] mt-[55px] 
             text-white font-black text-[30px] font-['Inter'] 
-            hover:bg-[#684500] ease-in-out duration-500">
+            hover:bg-[#684500] ease-in-out duration-500" name="btn_login">
                 ENTRAR
             </button>
         </form>
