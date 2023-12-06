@@ -8,8 +8,9 @@ $port = getenv('MYSQL_PORT');
 try {
   $conn = new PDO("mysql:host=$host;dbname=$dbName", $username, $password);
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  #echo "Connected successfully";
-} catch (PDOException $e) {
-  echo "Connection failed:" . $e->getMessage();
+  //echo "Connected successfully";
+
+} catch(PDOException $e) {
+  echo "Connection failed: " . $e->getMessage();
 }
 ?>
