@@ -31,12 +31,7 @@ ALTER TABLE `TB_USERS` MODIFY `USER_PASSWORD` varchar(60) NOT NULL;
 ALTER TABLE `TB_USERS` ADD `USER_PHONE` varchar(20) NOT NULL; 
 ALTER TABLE `TB_USERS` MODIFY `USER_PHONE` varchar(20) NOT NULL; 
 
-INSERT INTO `TB_USERS` ( `USER_FIRSTNAME`, `USER_LASTNAME`, `USER_BIRTH`, `USER_EMAIL`, `USER_PASSWORD`, `USER_RANK`) VALUES
-( 'John', 'Doe', '1990-05-15', 'john.doe@example.com', 'hashed_1', 1),
-( 'Jane', 'Smith', '1985-08-22', 'jane.smith@example.com', 'hashed_2', 3),
-( 'Bob', 'Johnson', '1993-02-10', 'bob.johnson@example.com', 'hashed_3', 3),
-( 'Alice', 'Williams', '1988-11-30', 'alice.williams@example.com', 'hashed_4', 3),
-( 'Charlie', 'Brown', '1995-07-05', 'charlie.brown@example.com', 'hashed_5', 2);
+
 
 ALTER TABLE `TB_SCHEDULES`
   ADD PRIMARY KEY (`SCHEDULE_ID`),
@@ -67,3 +62,10 @@ ALTER TABLE `TB_SCHEDULES`
   ADD CONSTRAINT `tb_schedules_ibfk_1` FOREIGN KEY (`SCHEDULE_SERVICES`) REFERENCES `TB_SERVICES` (`SERVICE_ID`),
   ADD CONSTRAINT `tb_schedules_ibfk_2` FOREIGN KEY (`SCHEDULE_CLIENT`) REFERENCES `TB_USERS` (`USER_ID`),
   ADD CONSTRAINT `tb_schedules_ibfk_3` FOREIGN KEY (`SCHEDULE_ATTENDANT`) REFERENCES `TB_USERS` (`USER_ID`);
+
+INSERT INTO `TB_USERS` ( `USER_FIRSTNAME`, `USER_LASTNAME`, `USER_BIRTH`, `USER_EMAIL`, `USER_PASSWORD`, `USER_RANK`, `USER_PHONE`) VALUES
+( 'John', 'Doe', '1990-05-15', 'john.doe@example.com', 'hashed_1', 1, '123-456-7890'),
+( 'Jane', 'Smith', '1985-08-22', 'jane.smith@example.com', 'hashed_2', 3, '234-567-8901'),
+( 'Bob', 'Johnson', '1993-02-10', 'bob.johnson@example.com', 'hashed_3', 3, '345-678-9012'),
+( 'Alice', 'Williams', '1988-11-30', 'alice.williams@example.com', 'hashed_4', 3, '456-789-0123'),
+( 'Charlie', 'Brown', '1995-07-05', 'charlie.brown@example.com', 'hashed_5', 2, '567-890-1234');
