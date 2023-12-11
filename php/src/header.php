@@ -27,9 +27,21 @@
         <?php if( isset($_SESSION['status']) && !empty($_SESSION['status']) )
         {
         ?>
-            <li><a href="#">
-                <img src="./assets/images/icons/user.png" width="32" height="32" alt="Profile">
-            </a>
+            <li>
+            <div class="relative inline-block text-left">
+                <div>
+                    <button type="button" class="inline-flex w-full justify-center gap-x-1.5" id="menu-button">
+                        <img src="./assets/images/icons/user.png" width="32" height="32" alt="Profile">
+                    </button>
+                </div>
+                
+                <div class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Minha Conta</a>
+                    <form method="POST" action="#" role="none">
+                        <button type="submit" class="text-gray-700 block w-full px-4 py-2 text-left text-sm" role="menuitem" tabindex="-1" id="menu-item-3">Sair</button>
+                    </form>
+                </div>
+            </div>
         </li>
         <?php }else{ ?>
             <li>
@@ -95,3 +107,21 @@
         </li>
     </ul>
 </header>
+
+<script>
+    // Adicione o script JavaScript aqui
+    var menuButton = document.getElementById('menu-button');
+    var dropdownMenu = document.querySelector('.absolute');
+
+    // Exibir o menu quando o mouse passa sobre o botão
+    menuButton.addEventListener('click', function() {
+      menuButton.setAttribute('aria-expanded', 'true');
+      dropdownMenu.style.display = 'block';
+    });
+
+    // Ocultar o menu quando o mouse deixa o botão
+    dropdownMenu.addEventListener('click', function() {
+      menuButton.setAttribute('aria-expanded', 'false');
+      dropdownMenu.style.display = 'none';
+    });
+  </script>
