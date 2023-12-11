@@ -1,4 +1,3 @@
-
 <header>
     <!-- Menu de Navegação para telas médias e grandes -->
     <ul class="hidden w-full justify-evenly h-100px items-center p-5 font-['Sancreek'] text-2xl text-white
@@ -28,20 +27,19 @@
         {
         ?>
             <li>
-            <div class="relative inline-block text-left">
-                <div>
-                    <button type="button" class="inline-flex w-full justify-center gap-x-1.5" id="menu-button">
-                        <img src="./assets/images/icons/user.png" width="32" height="32" alt="Profile">
-                    </button>
-                </div>
-                
-                <div class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Minha Conta</a>
+            <div class="relative inline-block text-left dropdown">
+                <button type="button" class="inline-flex w-full justify-center gap-x-1.5" id="dropbtn">
+                    <img src="./assets/images/icons/user.png" width="32" height="32" alt="Profile">
+                </button>
+
+                <div id="dropcont" class="dropdown-content hidden absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <a href="#" class="text-gray-700 block px-4 py-2 text-sm">Minha Conta</a>
                     <form method="POST" action="#" role="none">
-                        <button type="submit" class="text-gray-700 block w-full px-4 py-2 text-left text-sm" role="menuitem" tabindex="-1" id="menu-item-3">Sair</button>
+                        <button type="submit" class="text-gray-700 block w-full px-4 py-2 text-left text-sm">Sair</button>
                     </form>
                 </div>
             </div>
+
         </li>
         <?php }else{ ?>
             <li>
@@ -109,19 +107,15 @@
 </header>
 
 <script>
-    // Adicione o script JavaScript aqui
-    var menuButton = document.getElementById('menu-button');
-    var dropdownMenu = document.querySelector('.absolute');
+    var dropdownButton = document.getElementById('dropbtn');
+    var dropdownContent = document.getElementById('dropcont');
 
-    // Exibir o menu quando o mouse passa sobre o botão
-    menuButton.addEventListener('click', function() {
-      menuButton.setAttribute('aria-expanded', 'true');
-      dropdownMenu.style.display = 'block';
+    dropdownButton.addEventListener('click', function (event) {
+        event.stopPropagation();
+        dropdownContent.style.display = (dropdownContent.style.display === 'block') ? 'none' : 'block';
     });
+    window.addEventListener('click', function () {
 
-    // Ocultar o menu quando o mouse deixa o botão
-    dropdownMenu.addEventListener('click', function() {
-      menuButton.setAttribute('aria-expanded', 'false');
-      dropdownMenu.style.display = 'none';
+        dropdownContent.style.display = 'none';
     });
-  </script>
+</script>
