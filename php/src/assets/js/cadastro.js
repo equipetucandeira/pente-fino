@@ -36,6 +36,17 @@ nextBtn.forEach(button => {
     });
 });
 
+form.addEventListener('submit', function (event) {
+
+    event.preventDefault();
+
+    if (isBroken()) {
+        console.log('O formulário está quebrado. Corrija antes de enviar.');
+    } else {
+        form.submit();
+    }
+});
+
 prevBtn.forEach(button => {
     button.addEventListener('click', (e) => {
         changeStep('prev');
