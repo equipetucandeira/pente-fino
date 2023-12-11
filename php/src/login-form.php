@@ -28,7 +28,7 @@
         </div>
 
         <div class="w-[200px] md:w-[250px] lg:w-[300px]">
-            <img src="./assets/images/logo-principal.png" alt="Logo - Pente Fino">
+            <img src="./assets/images/logo-pentefino.png" alt="Logo - Pente Fino">
         </div>
 
         <?php
