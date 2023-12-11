@@ -1,13 +1,21 @@
 <?php
+session_start();
 include 'config.php';
 
-$email_adm = $_GET['id'];
-$query_adm = "SELECT USER_FIRSTNAME, USER_LASTNAME FROM TB_USERS WHERE USER_EMAIL = :email";
+if((!isset($_SESSION['userMail']) == true) and (!isset($_SESSION['userPasswd']) == true) and $_SESSION['userLevel'] != 1){
+    header('Location: login-form.php');
+    unset($_SESSION['senha']);
+    unset($_SESSION['email']);
+}
+$logado = $_SESSION['userMail'];
+
+$query_adm = "SELECT USER_FIRSTNAME, USER_LASTNAME FROM TB_USERS WHERE USER_EMAIL = :logado";
 $stmt = $conn->prepare($query_adm);
-$stmt->bindParam(':email', $email_adm, PDO::PARAM_STR);
+$stmt->bindParam(':logado', $logado, PDO::PARAM_STR);
 $stmt->execute();
 $resp = $stmt->fetch(PDO::FETCH_ASSOC);
 $name_adm = $resp['USER_FIRSTNAME'] . " " . $resp['USER_LASTNAME'];
+
 
 $query_cal = "SELECT 
                     s.SCHEDULE_ID,
@@ -34,6 +42,7 @@ $stmt_cli->execute();
 $query_fun = "SELECT * FROM TB_USERS WHERE USER_RANK = 2";
 $stmt_fun = $conn->prepare($query_fun);
 $stmt_fun->execute();
+
 
 ?>
 
@@ -98,7 +107,7 @@ $stmt_fun->execute();
                     </a>
                 </li>
                 <li>
-                    <a href="./login-form.php" class="text-red-500 hover:text-white ease-in-out duration-[400ms]">
+                    <a href="./logout.php" class="text-red-500 hover:text-white ease-in-out duration-[400ms]">
                         Sair
                     </a>
                 </li>
@@ -125,7 +134,7 @@ $stmt_fun->execute();
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="py-2 hover:text-red-500 ease-in-out duration-[400ms]">
+                    <a href="./logout.php" class="py-2 hover:text-red-500 ease-in-out duration-[400ms]">
                         Sair
                     </a>
                 </li>
@@ -147,9 +156,9 @@ $stmt_fun->execute();
             <h2 class="md:text-7xl text-5xl text-yellow-500 font-['Sancreek']">Agendamentos</h2>
             <?php
      if (count($result_cal) > 0) {
-        echo "<table class='w-full'>";
+        echo "<table class='w-full mt-10'>";
         echo "<thead>";
-        echo "<tr>";
+        echo "<tr class='font-['Smythe'] text-3xl'>";
         echo "<th>ID</th>";
         echo "<th>Cliente</th>";
         echo "<th>Atendente</th>";
@@ -162,12 +171,12 @@ $stmt_fun->execute();
 
         foreach ($result_cal as $row) {
             echo "<tr>";
-            echo "<td>{$row['SCHEDULE_ID']}</td>";
-            echo "<td>{$row['client_firstname']} {$row['client_lastname']}</td>";
-            echo "<td>{$row['attendant_firstname']} {$row['attendant_lastname']}</td>";
-            echo "<td>{$row['SERVICE_NAME']}</td>";
-            echo "<td>{$row['SCHEDULE_DATE']}</td>";
-            echo "<td>{$row['SCHEDULE_VALUE']}</td>";
+            echo "<td class='text-center'>{$row['SCHEDULE_ID']}</td>";
+            echo "<td class='text-center'>{$row['client_firstname']} {$row['client_lastname']}</td>";
+            echo "<td class='text-center'>{$row['attendant_firstname']} {$row['attendant_lastname']}</td>";
+            echo "<td class='text-center'>{$row['SERVICE_NAME']}</td>";
+            echo "<td class='text-center'>{$row['SCHEDULE_DATE']}</td>";
+            echo "<td class='text-center'>{$row['SCHEDULE_VALUE']}</td>";
             echo "</tr>";
         }
 
@@ -202,7 +211,7 @@ $stmt_fun->execute();
                 echo "<td class='text-center'>{$resp_cli['USER_BIRTH']}</td>";
                 echo "<td class='text-center'>{$resp_cli['USER_EMAIL']}</td>";
                 echo "<td class='text-center'>{$resp_cli['USER_PHONE']}</td>";
-                echo "<td class='text-center'><a class='text-center flex justify-center items-center' href='alterar_cliente.php?id={$resp_cli['USER_ID']}'> <svg class='w-6 h-6 text-gray-800 ' aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'>
+                echo "<td class='text-center'><a class='text-center flex justify-center items-center' href='alterar-cliente.php?id={$resp_cli['USER_ID']}'> <svg class='w-6 h-6 text-gray-800 ' aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'>
                 <path  stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7.75 4H19M7.75 4a2.25 2.25 0 0 1-4.5 0m4.5 0a2.25 2.25 0 0 0-4.5 0M1 4h2.25m13.5 6H19m-2.25 0a2.25 2.25 0 0 1-4.5 0m4.5 0a2.25 2.25 0 0 0-4.5 0M1 10h11.25m-4.5 6H19M7.75 16a2.25 2.25 0 0 1-4.5 0m4.5 0a2.25 2.25 0 0 0-4.5 0M1 16h2.25'/>
             </svg></a></td>
             </tr>";
@@ -234,7 +243,7 @@ $stmt_fun->execute();
                 echo "<td class='text-center'>{$resp_fun['USER_BIRTH']}</td>";
                 echo "<td class='text-center'>{$resp_fun['USER_EMAIL']}</td>";
                 echo "<td class='text-center'>{$resp_fun['USER_PHONE']}</td>";
-                echo "<td class='text-center'><a class='text-center flex justify-center items-center' href='alterar_funcionario.php?id={$resp_fun['USER_ID']}'> <svg class='w-6 h-6 text-gray-800 ' aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'>
+                echo "<td class='text-center'><a class='text-center flex justify-center items-center' href='alterar-cliente.php?id={$resp_fun['USER_ID']}'> <svg class='w-6 h-6 text-gray-800 ' aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'>
                 <path  stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7.75 4H19M7.75 4a2.25 2.25 0 0 1-4.5 0m4.5 0a2.25 2.25 0 0 0-4.5 0M1 4h2.25m13.5 6H19m-2.25 0a2.25 2.25 0 0 1-4.5 0m4.5 0a2.25 2.25 0 0 0-4.5 0M1 10h11.25m-4.5 6H19M7.75 16a2.25 2.25 0 0 1-4.5 0m4.5 0a2.25 2.25 0 0 0-4.5 0M1 16h2.25'/>
             </svg></a></td>
             </tr>";

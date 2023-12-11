@@ -40,7 +40,7 @@ if (isset($_POST['passwordUserLogin']) && isset($_POST['emailUserLogin'])) {
             $_SESSION['userLevel'] = $results['USER_RANK'];
             switch ($level) {
                 case 1:
-                    header("Location:admin-access.php?id={$_SESSION['userMail']}");
+                    header("Location:admin-access.php");
                     exit();
                     break;
                 case 2:
