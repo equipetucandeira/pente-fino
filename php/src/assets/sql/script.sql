@@ -17,6 +17,14 @@ CREATE TABLE `TB_SERVICES` (
   `SERVICE_VALUE` decimal(10,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+INSERT INTO TB_SERVICES (SERVICE_ID, SERVICE_NAME, SERVICE_DESCRIPTION, SERVICE_VALUE)
+VALUES
+    (1, 'Corte Completo', 'Inclui corte de cabelo e lavagem', 30.00),
+    (2, 'Acabamento', 'Finalização e ajustes', 15.00),
+    (3, 'Penteado', 'Estilização do cabelo', 20.00),
+    (4, 'Barba Completa', 'Inclui barba e lavagem', 25.00),
+    (5, 'Acabamento de Barba', 'Finalização e ajustes na barba', 12.00);
+
 CREATE TABLE `TB_USERS` (
   `USER_ID` int(11) NOT NULL,
   `USER_FIRSTNAME` varchar(30) NOT NULL,
