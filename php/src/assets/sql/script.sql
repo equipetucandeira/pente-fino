@@ -75,3 +75,16 @@ ALTER TABLE `TB_SCHEDULES`
   ADD CONSTRAINT `tb_schedules_ibfk_1` FOREIGN KEY (`SCHEDULE_SERVICES`) REFERENCES `TB_SERVICES` (`SERVICE_ID`),
   ADD CONSTRAINT `tb_schedules_ibfk_2` FOREIGN KEY (`SCHEDULE_CLIENT`) REFERENCES `TB_USERS` (`USER_ID`),
   ADD CONSTRAINT `tb_schedules_ibfk_3` FOREIGN KEY (`SCHEDULE_ATTENDANT`) REFERENCES `TB_USERS` (`USER_ID`);
+
+
+CREATE TABLE `TB_COMMENTS` (
+  `USER_ALIAS` varchar(30) NOT NULL,
+  `USER_COMMENT` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO `TB_COMMENTS` ( `USER_ALIAS`, `USER_COMMENT`) VALUES
+( 'Pedrinho', 'Sou cliente do Pente Fino a mais de 1 ano e recomendo demais!
+              Ambiente sempre limpo e super agradável. Nota 10!'),
+( 'Joãozinho', 'Ótima barbearia! Recomendo para todos. Atendentes super profissionais e atenciosos!'),
+( 'Juninho', 'Muito bom poder cortar o cabelo com um ótimo profissional e ao mesmo
+              tempo estar em um ambiente agradável! Eu recomendo!!!!');
