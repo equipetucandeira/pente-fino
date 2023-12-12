@@ -228,5 +228,3 @@ function phoneNumberFormatter(x) {
     const formattedInputValue = formatPhoneNumber(x.value);
     x.value = formattedInputValue;
 }
-
-

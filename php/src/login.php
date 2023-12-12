@@ -7,7 +7,6 @@ if (isset($_POST['passwordUserLogin']) && isset($_POST['emailUserLogin'])) {
     $userMail = cleaningInputLogin($_POST['emailUserLogin']);
     $passwd = cleaningInputLogin($_POST['passwordUserLogin']);
 
-
     if (empty($userMail)) {
         header('Location: login-form.php?errorMessage=User Name is required');
         exit();
@@ -16,9 +15,11 @@ if (isset($_POST['passwordUserLogin']) && isset($_POST['emailUserLogin'])) {
         exit();
     } elseif (!validateType($userMail, 'email')) {
         header('Location: login-form.php?errorMessage=Email format is invalid');
+        exit();
     }
 
-    $query = "SELECT USER_EMAIL, USER_PASSWORD, USER_RANK, USER_FIRSTNAME FROM TB_USERS WHERE  USER_EMAIL = :mail";
+    $query = "SELECT USER_ID, USER_EMAIL, USER_PASSWORD, USER_RANK, USER_FIRSTNAME FROM TB_USERS WHERE USER_EMAIL = :mail";
+
 
     $stmt = $conn->prepare($query);
 
@@ -26,37 +27,34 @@ if (isset($_POST['passwordUserLogin']) && isset($_POST['emailUserLogin'])) {
 
     $stmt->execute();
 
-
     $results = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    //echo $results['USER_PASSWORD'];
-    
-    if (isset($_POST['btn_login'])) {
-        if ($results && password_verify($passwd, $results['USER_PASSWORD']) && $userMail == $results['USER_EMAIL']) { //A função fetch pega a proxima linha de um array associativo e anteriormente eu não estava passando o $results nessa condicional, mas depois de pesquisar, percebi que ao realizar o fetch, o ponteiro já acaba apontando para proxima linha antes de validar as credenciais, então o $results tem que me retornar true para que esse erro deixe de ocorrer
-            $level = $results['USER_RANK'];
-            $_SESSION['userMail'] = $results['USER_EMAIL'];
-            $_SESSION['userPasswd'] = $results['USER_PASSWORD'];
-            $_SESSION['userLevel'] = $results['USER_RANK'];
-            $_SESSION["status"] = 1;
-            switch ($level) {
-                case 1:
-                    header("Location:admin-access.php");
-                    exit();
-                    break;
-                case 2:
-                    header("Location: admin-access.php");
-                    exit();
-                    break;
-                case 3:
-                    header("Location: user-access.php");
-                    exit();
-                    break;
-                default:
-                    return true;
-            }
-        } else {
-            header("Location: login-form.php?errorMessage=Name or password is invalid");
-            exit();
+    if ($results && password_verify($passwd, $results['USER_PASSWORD']) && $userMail == $results['USER_EMAIL']) {
+        $level = $results['USER_RANK'];
+        $_SESSION['userMail'] = $results['USER_EMAIL'];
+        $_SESSION['userName'] = $results['USER_FIRSTNAME'];
+        $_SESSION['userPasswd'] = $results['USER_PASSWORD'];
+        $_SESSION['userLevel'] = $results['USER_RANK'];
+        $_SESSION['userId'] = $results['USER_ID'];
+        $_SESSION["status"] = 1;
+
+        switch ($level) {
+            case 1:
+            case 2:
+                header("Location: admin-access.php");
+                break;
+            case 3:
+                header("Location: user-access.php");
+                break;
+            default:
+                return true;
+
         }
+
+        exit();  // Importante para garantir que o script seja encerrado após o redirecionamento
+    } else {
+        header("Location: login-form.php?errorMessage=Name or password is invalid");
+        exit();
     }
 }
+?>

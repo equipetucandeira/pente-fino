@@ -1,4 +1,3 @@
-
 const butExclu = document.getElementById('but-excluir');
 const boxShow = document.getElementById('box-show');
 const boxPrin = document.getElementById('box-prin');
@@ -7,7 +6,10 @@ const btnConfirmar = document.getElementById('btn-confirmar');
 
 butExclu.addEventListener('click', () => {
     boxShow.style.display = 'flex';
+
     boxPrin.style.display = 'none';
+
+    boxPrin.style.backgroundColor = ''
 })
 
 btnCancelar.addEventListener('click', () => {

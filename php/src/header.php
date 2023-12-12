@@ -33,11 +33,14 @@
                 </button>
 
                 <div class="dropcont hidden absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <a href="user-acess" class="text-gray-700 block px-4 py-2 text-sm">Minha Conta</a>
+                    <?php if( isset($_SESSION['userLevel']) && $_SESSION['userLevel'] == 3){?>
+                    <a href="./user-access.php" class="text-gray-700 block px-4 py-2 text-sm">Minha Conta</a>
+                    <?php }else{ ?>
+                    <a href="./admin-access.php" class="text-gray-700 block px-4 py-2 text-sm">Minha Conta</a>
+                    <?php } ?>
                     <a href="logout.php" class="text-gray-700 block px-4 py-2 text-sm">Sair</a>
                 </div>
             </div>
-
         </li>
         <?php }else{ ?>
             <li>
@@ -102,9 +105,11 @@ transition ease-in-out delay-150 transform scale-y-0 font-['Sancreek'] text-3xl 
 transition ease-in-out delay-150 transform scale-y-0 font-['Sancreek'] text-3xl h-h-calc justify-around">
 <!-- Menu items for small screens -->
 <li>
-    <a href="user-acess.php" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
-        Minha conta
-    </a>
+    <?php if( isset($_SESSION['userLevel']) && $_SESSION['userLevel'] == 3){?>
+    <a href="./user-access.php" class="text-gray-700 block px-4 py-2 text-sm">Minha Conta</a>
+    <?php }else{ ?>
+    <a href="./admin-access.php" class="text-gray-700 block px-4 py-2 text-sm">Minha Conta</a>
+    <?php } ?>
 </li>
 <li>
     <a href="logout.php" class="py-2 hover:text-yellow-500 ease-in-out duration-[400ms]">
@@ -112,4 +117,3 @@ transition ease-in-out delay-150 transform scale-y-0 font-['Sancreek'] text-3xl 
     </a>
 </li>
 </ul>
-
