@@ -20,15 +20,16 @@ $linha = $consulta->fetch(PDO::FETCH_ASSOC);
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="./assets/js/tailwind.config.js" defer></script>
+    <script src="./assets/js/alterar-cliente.js"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
 
     <link rel="shortcut icon" href="./assets/images/icon/favicon.ico" type="image/x-icon">
     <title>Pente Fino | Admin</title>
 </head>
 <body>
-<div class="p-20 flex justify-center items-center flex-col">
+<div class="p-20 flex justify-center items-center flex-col" id="box-prin">
    
-      <h3 class="md:text-7xl text-5xl text-yellow-500 font-['Sancreek'] mt-5">Alterando clientes</h3>
+      <h3 class="md:text-7xl text-5xl text-yellow-500 font-['Sancreek'] mt-5">Alterando</h3>
       <?php echo "<h3 class='text-5xl mt-10'>Cliente: {$linha['USER_FIRSTNAME']}</h3>"; ?>
       <form action="alterar-cliente-action.php" method="POST" class="w-1/2">
          <input type="hidden" name="txtid" value="<?php echo "{$linha['USER_ID']}"?>">
@@ -62,8 +63,19 @@ $linha = $consulta->fetch(PDO::FETCH_ASSOC);
          </div>
          <!--data de nascimento do cliente-->
          <!--botões de controle -->
-         <button type=" submit" class="font-['Smythe'] text-3xl mt-5 hover:text-yellow-500 ease-in-out duration-[400ms] " name="btnalterar">Alterar </button>
+         <div class="flex w-full justify-center">
+         <button type="submit" class="font-['Smythe'] text-3xl mt-5 text-green-500 hover:text-green-800 ease-in-out duration-[400ms] " name="btnalterar">Alterar </button>
+         </div>
       </form>
+      <button id="but-excluir" class="text-red-500 font-['Smythe'] text-3xl mt-5 hover:text-red-800 ease-in-out duration-[400ms]">Excluir</button>
+
+            <div class="box-show" id="box-show">
+               <h1 class="font-['Smythe'] text-3xl">Tem certeza que deseja excluir?</h1>
+               <div class="mt-5 flex justify-evenly width-full">
+                  <button id="btn-cancelar" class="text-green-500 font-['Smythe'] text-3xl hover:text-green-800 ease-in-out duration-[400ms]">Cancelar</button>
+                  <button id="btn-confirmar" class="text-red-500 font-['Smythe'] text-3xl hover:text-red-800 ease-in-out duration-[400ms]"><?php echo "<a href='excluir_action.php?id=$codigo'></a>"; ?>Excluir</button>
+               </div>
+            </div>
 
 
    

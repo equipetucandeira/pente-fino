@@ -2,10 +2,9 @@
 session_start();
 include 'config.php';
 
-if((!isset($_SESSION['userMail']) == true) and (!isset($_SESSION['userPasswd']) == true) and $_SESSION['userLevel'] != 1){
+if(!isset($_SESSION['userMail']) || !isset($_SESSION['userPasswd'])){
     header('Location: login-form.php');
-    unset($_SESSION['senha']);
-    unset($_SESSION['email']);
+    exit();
 }
 $logado = $_SESSION['userMail'];
 
@@ -87,22 +86,22 @@ $stmt_fun->execute();
             <ul class="hidden w-full justify-evenly h-100px items-center p-5 font-['Sancreek'] text-2xl text-white
             md:flex lg:text-3xl nav-list">
                 <li>
-                    <a href="index.html" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
+                    <a href="#agendamentos" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
                         Agendamentos
                     </a>
                 </li>
                 <li>
-                    <a href="#sobre" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
+                    <a href="#clientes" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
                         Clientes
                     </a>
                 </li>
                 <li class="flex">
-                    <a href="#" class="mt-[10px]">
+                    <a href="#Top" class="mt-[10px]">
                         <img src="./assets/images/logo-principal.png" alt="Logo Pente-Fino" width="100" height="100">
                     </a>
                 </li>
                 <li>
-                    <a href="#agendar" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
+                    <a href="#funcionarios" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
                         Funcionários
                     </a>
                 </li>
@@ -119,17 +118,17 @@ $stmt_fun->execute();
             transition ease-in-out delay-150 transform scale-y-0 font-['Sancreek'] text-3xl h-h-calc justify-around">
 
                 <li>
-                    <a href="index.html" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
+                    <a href="#agendamentos" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
                         Agendamentos
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="py-2 hover:text-yellow-500 ease-in-out duration-[400ms]">
+                    <a href="#clientes" class="py-2 hover:text-yellow-500 ease-in-out duration-[400ms]">
                         Clientes
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="py-2 hover:text-yellow-500 ease-in-out duration-[400ms]">
+                    <a href="#funcionarios" class="py-2 hover:text-yellow-500 ease-in-out duration-[400ms]">
                         Funcionários
                     </a>
                 </li>
@@ -151,7 +150,7 @@ $stmt_fun->execute();
         </div>
     </section>
 
-    <section class="p-10 w-full mt-20">
+    <section class="p-10 w-full mt-20" id="agendamentos">
         <div class="w-full">
             <h2 class="md:text-7xl text-5xl text-yellow-500 font-['Sancreek']">Agendamentos</h2>
             <?php
@@ -189,7 +188,7 @@ $stmt_fun->execute();
         </div>
     </section>
 
-    <section class="p-10 w-full mt-20">
+    <section class="p-10 w-full mt-20" id="clientes">
         <div class="w-full">
             <h2 class="md:text-7xl text-5xl text-blue-500 font-['Sancreek']">Lista de Clientes</h2>
             <table class="w-full mt-10">
@@ -221,7 +220,7 @@ $stmt_fun->execute();
         </div>
     </section>
 
-    <section class="p-10 w-full mt-20">
+    <section class="p-10 w-full mt-20" id="funcionarios">
         <div class="w-full">
             <h2 class="md:text-7xl text-5xl text-green-500 font-['Sancreek']">Lista de Funcionários</h2>
             <table class="w-full mt-10">
