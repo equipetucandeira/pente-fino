@@ -63,29 +63,17 @@
 </a>
 
 <?php if (isset($_SESSION['userMail']) && !empty($_SESSION['userMail'])) { ?>
-    <div class="relative inline-block text-left dropdown">
-        <button type="button" class="inline-flex w-full justify-center gap-x-1.5 dropbtn">
+    <div class="mobile-menu2 relative inline-block text-left">
+        <button type="button" class="inline-flex w-full justify-center gap-x-1.5">
             <img src="./assets/images/icons/user.png" width="32" height="32" alt="Profile">
         </button>
-
-        <div class="dropcont hidden absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-            <a href="user-acess" class="text-gray-700 block px-4 py-2 text-sm">Minha Conta</a>
-            <a href="logout.php" class="text-gray-700 block px-4 py-2 text-sm">Sair</a>
-        </div>
     </div>
-
 <?php } else { ?>
     <a href="./login-form.php" class="text-yellow-500 hover:text-white ease-in-out duration-[400ms] font-['Sancreek'] text-2xl text-yellow-500">
         Login
     </a>
 <?php } ?>
 
-</div>
-
-<!-- Dropdown content for user menu (for small screens) -->
-<div id="dropcont" class="dropdown-content hidden md:hidden absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-<a href="user-acess.php" class="text-gray-700 block px-4 py-2 text-sm">Minha Conta</a>
-<a href="logout.php" class="text-gray-700 block px-4 py-2 text-sm">Sair</a>
 </div>
 
 <!-- Menu Responsivo para telas pequenas -->
@@ -108,5 +96,20 @@ transition ease-in-out delay-150 transform scale-y-0 font-['Sancreek'] text-3xl 
     </a>
 </li>
 </ul>
-</header>
+
+<!-- Menu Responsivo para telas pequenas -->
+<ul id="mobileNav2" class="md:hidden flex flex-col items-center bg-transparent backdrop-blur text-white w-full absolute top-h-100px  
+transition ease-in-out delay-150 transform scale-y-0 font-['Sancreek'] text-3xl h-h-calc justify-around">
+<!-- Menu items for small screens -->
+<li>
+    <a href="user-acess.php" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
+        Minha conta
+    </a>
+</li>
+<li>
+    <a href="logout.php" class="py-2 hover:text-yellow-500 ease-in-out duration-[400ms]">
+        Sair
+    </a>
+</li>
+</ul>
 
