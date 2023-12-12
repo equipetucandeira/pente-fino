@@ -7,6 +7,14 @@ if( !isset($_SESSION['status']) && empty($_SESSION['status']) ){
     exit();
 }
 
+$level = $_SESSION['userLevel'];
+
+$allowedLevels = [3];
+
+if( !in_array($level, $allowedLevels) ){
+    header('Location: ./index.php');
+}
+
 $logado = $_SESSION['userMail'];
 
 $query_cli = "SELECT USER_FIRSTNAME, USER_LASTNAME FROM TB_USERS WHERE USER_EMAIL = :logado";
@@ -71,13 +79,13 @@ $resp = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <ul class="hidden w-full justify-evenly h-100px items-center p-5 font-['Sancreek'] text-2xl text-white
             md:flex lg:text-3xl nav-list">
                 <li>
-                    <a href="#agendamentos" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
-                        Agendamentos
+                    <a href="./index.php" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
+                        Home
                     </a>
                 </li>
                 <li>
-                    <a href="#clientes" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
-                        Clientes
+                    <a href="#agendamentos" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
+                        Agendamentos
                     </a>
                 </li>
                 <li class="flex">
@@ -140,34 +148,37 @@ $resp = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <h2 class="md:text-7xl text-5xl text-yellow-500 font-['Sancreek']">Agendamentos</h2>
             <?php
      if ($resp) {
-        echo "<table class='w-full mt-10'>";
+        echo "<div class='overflow-x-auto'>";
+        echo "<table class='min-w-full table-auto mt-10'>";
         echo "<thead>";
         echo "<tr class='font-['Smythe'] text-3xl'>";
-        echo "<th>ID</th>";
-        echo "<th>Nome do serviço</th>";
-        echo "<th>Atendente</th>";
-        echo "<th>Data</th>";
-        echo "<th>Valor</th>";
-        echo "<th>Hora</th>";
+        echo "<th class='px-4 py-2'>ID</th>";
+        echo "<th class='px-4 py-2'>Nome do serviço</th>";
+        echo "<th class='px-4 py-2'>Atendente</th>";
+        echo "<th class='px-4 py-2'>Data</th>";
+        echo "<th class='px-4 py-2'>Valor</th>";
+        echo "<th class='px-4 py-2'>Hora</th>";
         echo "</tr>";
         echo "</thead>";
         echo "<tbody>";
-
+    
         foreach ($resp as $row) {
             echo "<tr>";
-            echo "<td class='text-center'>{$row['SCHEDULE_ID']}</td>";
-            echo "<td class='text-center'>{$row['SERVICE_NAME']}</td>";
-            echo "<td class='text-center'>{$row['USER_FIRSTNAME']}". " {$row['USER_LASTNAME']}"."</td>";
+            echo "<td class='text-center px-4 py-2'>{$row['SCHEDULE_ID']}</td>";
+            echo "<td class='text-center px-4 py-2'>{$row['SERVICE_NAME']}</td>";
+            echo "<td class='text-center px-4 py-2'>{$row['USER_FIRSTNAME']} {$row['USER_LASTNAME']}</td>";
             $scheduleDate = new DateTime($row['SCHEDULE_DATE']);
             $formattedDate = $scheduleDate->format('d/m/Y');
-            echo "<td class='text-center'>$formattedDate</td>";
-            echo "<td class='text-center'>R$ {$row['SCHEDULE_VALUE']}</td>";
-            echo "<td class='text-center'>{$row['SCHEDULE_TIME']}</td>";
+            echo "<td class='text-center px-4 py-2'>$formattedDate</td>";
+            echo "<td class='text-center px-4 py-2'>R$ {$row['SCHEDULE_VALUE']}</td>";
+            echo "<td class='text-center px-4 py-2'>{$row['SCHEDULE_TIME']}</td>";
             echo "</tr>";
         }
-
+    
         echo "</tbody>";
         echo "</table>";
+        echo "</div>";
+    
     } else {
         echo "Você ainda não possui agendamentos  .";
     }
