@@ -29,3 +29,13 @@ html, body {
     border-radius: 5px;
     padding: 20px;
 }
+
+/*Excluir Cliente*/
+.box-show{
+    position: absolute;
+    padding: 60px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid black;
+    display: none;
+}
