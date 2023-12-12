@@ -67,7 +67,7 @@
 
             <span class="mt-6 text-[14px] md:text-[18px]">
                 Ainda não tem uma conta?
-                <a href="cadastro.html">
+                <a href="cadastro.php">
                     <strong class="font-black underline text-[#262d3b] hover:text-black ease-in-out duration-300">Cadastre-se</strong>
                 </a>
             </span>
