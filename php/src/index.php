@@ -12,11 +12,8 @@ session_start();
     <script src="./assets/js/index.js" defer></script>
     <script src="./assets/js/tailwind.config.js" defer></script>
     <link rel="stylesheet" href="./assets/css/style.css">
-
     <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon">
     <title>Pente Fino</title>
-
-    <link href="../../assets/css/dist/output.css" rel="stylesheet">
 </head>
 
 <body>
