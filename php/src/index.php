@@ -32,10 +32,16 @@ session_start();
 
             <button class="w-full mt-9 text-4xl text-white border border-solid border-white p-4 
             hover:border-ycol hover:text-ycol ease-in-out duration-[400ms]">
-
-                <a href="#" class="w-full h-[100%]">
-                    Agende agora
-                </a>
+                
+            <?php if(isset($_SESSION['userMail']) && !empty($_SESSION['userMail']))
+                {
+                ?>
+                    <a href="agendar.php" class="w-full h-[100%]"> Agende Agora</a>
+                <?php }else{?>
+                    <a href="index.php#agendar" class="w-full h-[100%]">Agende Agora</a>
+                    </a>
+                <?php }?>
+               
             </button>
         </div>
     </section>
@@ -234,6 +240,7 @@ session_start();
                     Está esperando <br> o quê?
                 </h2>
 
+
                 <a href="#" class="w-percent-80 flex justify-center items-center">
 
                     <button class="w-full bg-ycol p-5 text-white rounded-xl font-['Smythe'] font-bold text-2xl
@@ -369,9 +376,15 @@ session_start();
                 mt-[20px] md:mt-[60px]
                 text-[#ECA72C] font-bold font-['Inter']
                 hover:text-white hover:bg-[#ECA72C] ease-in-out duration-300">
-
+                <?php if(isset($_SESSION['userMail']) && !empty($_SESSION['userMail']))
+                {
+                ?>
                     <a href="agendar.php" class="w-[100%] h-[100%]
                     text-[20px] md:text-[30px]">
+                <?php }else{?>
+                    <a href="index.php#agendar" class="w-[100%] h-[100%]
+                    text-[20px] md:text-[30px]">
+                <?php }?>
 
                         AGENDAR
                     </a>

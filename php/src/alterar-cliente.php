@@ -89,8 +89,6 @@ $linha = $consulta->fetch(PDO::FETCH_ASSOC);
 
          <button type="submit" class="font-['Smythe'] text-3xl mt-5 text-green-500 hover:text-green-800 ease-in-out duration-[400ms] " name="btnalterar">Alterar </button>
 
-            <button type="submit" class="font-['Smythe'] text-3xl mt-5 text-green-500 hover:text-green-800 ease-in-out duration-[400ms] " name="btnalterar">Alterar </button>
-
          </div>
       </form>
       <button id="but-excluir" class="text-red-500 font-['Smythe'] text-3xl mt-5 hover:text-red-800 ease-in-out duration-[400ms]">Excluir</button>
