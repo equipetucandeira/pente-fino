@@ -8,17 +8,17 @@
             </a>
         </li>
         <li>
-            <a href="#sobre" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
+            <a href="index.php#sobre" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
                 Sobre
             </a>
         </li>
         <li class="flex">
-            <a href="#" class="mt-[10px]">
+            <a href="index.php" class="mt-[10px]">
                 <img src="./assets/images/logo-pentefino.png" alt="Logo Pente-Fino" width="100" height="100">
             </a>
         </li>
         <li>
-            <a href="#agendar" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
+            <a href="index.php#agendar" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
                 Agendar
             </a>
         </li>
@@ -75,7 +75,7 @@
     </div>
 
 <?php } else { ?>
-    <a href="./login-form.php" class="text-yellow-500 hover:text-white ease-in-out duration-[400ms]">
+    <a href="./login-form.php" class="text-yellow-500 hover:text-white ease-in-out duration-[400ms] font-['Sancreek'] text-2xl text-yellow-500">
         Login
     </a>
 <?php } ?>
@@ -93,17 +93,17 @@
 transition ease-in-out delay-150 transform scale-y-0 font-['Sancreek'] text-3xl h-h-calc justify-around">
 <!-- Menu items for small screens -->
 <li>
-    <a href="index.html" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
+    <a href="index.php" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
         Página Inicial
     </a>
 </li>
 <li>
-    <a href="#" class="py-2 hover:text-yellow-500 ease-in-out duration-[400ms]">
+    <a href="index.php#sobre" class="py-2 hover:text-yellow-500 ease-in-out duration-[400ms]">
         Sobre
     </a>
 </li>
 <li>
-    <a href="#" class="py-2 hover:text-yellow-500 ease-in-out duration-[400ms]">
+    <a href="indepx.php#agendar" class="py-2 hover:text-yellow-500 ease-in-out duration-[400ms]">
         Agendar
     </a>
 </li>
