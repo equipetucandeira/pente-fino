@@ -1,6 +1,12 @@
 <?php
 include_once("config.php");
 include_once("validate.php");
+$consultFunc = "SELECT USER_ID, USER_FIRSTNAME FROM TB_USERS WHERE USER_RANK = 2 ";
+
+$stmt = $conn->prepare($consultFunc);
+$stmt->execute();
+
+$listFunc = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $query = "SELECT SERVICE_NAME, SERVICE_ID FROM TB_SERVICES";
 
@@ -11,6 +17,8 @@ $stmt->execute();
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -47,7 +55,7 @@ bg-[url('/assets/images/bgImage-login.jpg')] bg-no-repeat bg-cover backdrop-blur
         </div>
 
         <!---------------------------------------------- FORMULÁRIO E SEÇÕES -------------------------------------->
-        <form action="" method="" class="w-full flex flex-col max-h-fit">
+        <form action="./agendar-send.php" method="POST" class="w-full flex flex-col max-h-fit">
 
             <!---------------------------------------------- INPUTS -------------------------------------->
             <section class="w-[90%] self-center sm:flex justify-evenly">
@@ -83,10 +91,9 @@ bg-[url('/assets/images/bgImage-login.jpg')] bg-no-repeat bg-cover backdrop-blur
                         rounded-[15px] text-black h-[50px] md:w-[250px]">
 
                             <option value="" selected disabled>Escolha um atendente</option>
-                            <option value="1">JOÃOZINHO</option>
-                            <option value="2">LIMINHA</option>
-                            <option value="3">PEDRINHO</option>
-                            <option value="4">THIAGUINHO</option>
+                            <?php foreach ($listFunc as $row) : ?>
+                                <option value="<?php echo $row['USER_ID']; ?>"><?php echo $row['USER_FIRSTNAME']; ?></option>
+                            <?php endforeach; ?>
                         </select>
                     </label>
                 </section>
@@ -136,7 +143,7 @@ bg-[url('/assets/images/bgImage-login.jpg')] bg-no-repeat bg-cover backdrop-blur
             flex flex-col items-center gap-[30px]
             md:flex-row md:gap-[10px] justify-evenly mt-5">
 
-                <button id="confirmSchedule" class="w-[240px] h-[80px] bg-[#ECA72C] rounded-md
+                <button name="confirmSchedule" type="submit" id="confirmSchedule" class="w-[240px] h-[80px] bg-[#ECA72C] rounded-md
                 text-[22px] text-white font-bold shadow-gray-500 shadow-md 
                 hover:bg-[#684500] ease-in-out duration-[400ms]">
                     Confirmar Agendamento
