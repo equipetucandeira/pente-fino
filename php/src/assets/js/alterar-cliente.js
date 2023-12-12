@@ -6,7 +6,7 @@ const btnConfirmar = document.getElementById('btn-confirmar');
 
 butExclu.addEventListener('click', () => {
     boxShow.style.display = 'flex';
-    boxPrin.style.display = 'none';
+    boxPrin.style.backgroundColor = ''
 })
 
 btnCancelar.addEventListener('click', () => {

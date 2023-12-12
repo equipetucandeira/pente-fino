@@ -81,3 +81,15 @@ ALTER TABLE `TB_SCHEDULES`
 ADD COLUMN SCHEDULE_TIME varchar(6);
 
 ALTER TABLE `DB_PENTEFINO`.`TB_SCHEDULES` DROP INDEX `SCHEDULE_CLIENT`, ADD INDEX `SCHEDULE_CLIENT` (`SCHEDULE_CLIENT`) USING BTREE; 
+
+CREATE TABLE `TB_COMMENTS` (
+  `USER_ALIAS` varchar(30) NOT NULL,
+  `USER_COMMENT` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO `TB_COMMENTS` ( `USER_ALIAS`, `USER_COMMENT`) VALUES
+( 'Pedrinho', 'Sou cliente do Pente Fino a mais de 1 ano e recomendo demais!
+              Ambiente sempre limpo e super agradável. Nota 10!'),
+( 'Joãozinho', 'Ótima barbearia! Recomendo para todos. Atendentes super profissionais e atenciosos!'),
+( 'Juninho', 'Muito bom poder cortar o cabelo com um ótimo profissional e ao mesmo
+              tempo estar em um ambiente agradável! Eu recomendo!!!!');

@@ -39,3 +39,14 @@ html, body {
     border: 1px solid black;
     display: none;
 }
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-radius: 10px;
+
+  }
+table{
+    border-radius: 30px;
+
+}
