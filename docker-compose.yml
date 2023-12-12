@@ -15,7 +15,7 @@ services:
     ports:
       - '8000:80' #Estou passando a porta 3000, pois estava dando conflito com o apache já instalado, mas podem manter a 8000
     environment:
-        #  MYSQL_ALLOW_EMPTY_PASSWORD: "yes" // Precisei passar essa linha p conseguir rodar o docker por algum motivo aqui -eytor
+          MYSQL_ALLOW_EMPTY_PASSWORD: "yes" # Precisei passar essa linha p conseguir rodar o docker por algum motivo aqui -eytor
           MYSQL_HOST: db
           MYSQL_PORT: 3306
           MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
@@ -27,7 +27,7 @@ services:
      image: mysql
      restart: always
      environment:
-        #  MYSQL_ALLOW_EMPTY_PASSWORD: "yes" // Precisei passar essa linha p conseguir rodar o docker por algum motivo aqui -eytor
+         MYSQL_ALLOW_EMPTY_PASSWORD: "yes" # Precisei passar essa linha p conseguir rodar o docker por algum motivo aqui -eytor
          MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD} # Passe esse dado no arquivo .env
          MYSQL_DATABASE: ${MYSQL_DATABASE} # Passe esse dado no arquivo .env
          MYSQL_USER: ${MYSQL_USER} # Passe esse dado no arquivo .env
