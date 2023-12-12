@@ -370,7 +370,7 @@ session_start();
                 text-[#ECA72C] font-bold font-['Inter']
                 hover:text-white hover:bg-[#ECA72C] ease-in-out duration-300">
 
-                    <a href="#" class="w-[100%] h-[100%]
+                    <a href="agendar.php" class="w-[100%] h-[100%]
                     text-[20px] md:text-[30px]">
 
                         AGENDAR

@@ -1,3 +1,4 @@
+<script src="./assets/js/index.js" defer></script>
 <header>
     <!-- Menu de Navegação para telas médias e grandes -->
     <ul class="hidden w-full justify-evenly h-100px items-center p-5 font-['Sancreek'] text-2xl text-white
@@ -18,7 +19,7 @@
             </a>
         </li>
         <li>
-            <a href="index.php#agendar" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
+            <a href="agendar.php" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
                 Agendar
             </a>
         </li>

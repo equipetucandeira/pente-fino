@@ -17,14 +17,6 @@ CREATE TABLE `TB_SERVICES` (
   `SERVICE_VALUE` decimal(10,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-INSERT INTO TB_SERVICES (SERVICE_ID, SERVICE_NAME, SERVICE_DESCRIPTION, SERVICE_VALUE)
-VALUES
-    (1, 'Corte Completo', 'Inclui corte de cabelo e lavagem', 30.00),
-    (2, 'Acabamento', 'Finalização e ajustes', 15.00),
-    (3, 'Penteado', 'Estilização do cabelo', 20.00),
-    (4, 'Barba Completa', 'Inclui barba e lavagem', 25.00),
-    (5, 'Acabamento de Barba', 'Finalização e ajustes na barba', 12.00);
-
 CREATE TABLE `TB_USERS` (
   `USER_ID` int(11) NOT NULL,
   `USER_FIRSTNAME` varchar(30) NOT NULL,
@@ -38,8 +30,6 @@ CREATE TABLE `TB_USERS` (
 ALTER TABLE `TB_USERS` MODIFY `USER_PASSWORD` varchar(60) NOT NULL;
 ALTER TABLE `TB_USERS` ADD `USER_PHONE` varchar(20) NOT NULL; 
 ALTER TABLE `TB_USERS` MODIFY `USER_PHONE` varchar(20) NOT NULL; 
-
-
 
 ALTER TABLE `TB_SCHEDULES`
   ADD PRIMARY KEY (`SCHEDULE_ID`),
@@ -71,7 +61,6 @@ ALTER TABLE `TB_SCHEDULES`
   ADD CONSTRAINT `tb_schedules_ibfk_2` FOREIGN KEY (`SCHEDULE_CLIENT`) REFERENCES `TB_USERS` (`USER_ID`),
   ADD CONSTRAINT `tb_schedules_ibfk_3` FOREIGN KEY (`SCHEDULE_ATTENDANT`) REFERENCES `TB_USERS` (`USER_ID`);
 
-<<<<<<< HEAD
 INSERT INTO `TB_USERS` ( `USER_FIRSTNAME`, `USER_LASTNAME`, `USER_BIRTH`, `USER_EMAIL`, `USER_PASSWORD`, `USER_RANK`, `USER_PHONE`) VALUES
 ( 'John', 'Doe', '1990-05-15', 'john.doe@example.com', 'hashed_1', 1, '123-456-7890'),
 ( 'Jane', 'Smith', '1985-08-22', 'jane.smith@example.com', 'hashed_2', 3, '234-567-8901'),
@@ -86,7 +75,7 @@ VALUES
     (3, 'Penteado', 'Estilização do cabelo', 20.00),
     (4, 'Barba Completa', 'Inclui barba e lavagem', 25.00),
     (5, 'Acabamento de Barba', 'Finalização e ajustes na barba', 12.00);
-=======
+
 
 ALTER TABLE `TB_SCHEDULES` 
 ADD COLUMN SCHEDULE_TIME varchar(6);
@@ -104,4 +93,3 @@ INSERT INTO `TB_COMMENTS` ( `USER_ALIAS`, `USER_COMMENT`) VALUES
 ( 'Joãozinho', 'Ótima barbearia! Recomendo para todos. Atendentes super profissionais e atenciosos!'),
 ( 'Juninho', 'Muito bom poder cortar o cabelo com um ótimo profissional e ao mesmo
               tempo estar em um ambiente agradável! Eu recomendo!!!!');
->>>>>>> c8610c475bd5ce1399fb1ae1600e0e32d4d6fdc9
