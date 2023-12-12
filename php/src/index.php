@@ -36,7 +36,7 @@ session_start();
             <button class="w-full mt-9 text-4xl text-white border border-solid border-white p-4 
             hover:border-ycol hover:text-ycol ease-in-out duration-[400ms]">
 
-                <a href="#" class="w-full h-[100%]">
+                <a href="agendar.php" class="w-full h-[100%]">
                     Agende agora
                 </a>
             </button>
@@ -277,7 +277,7 @@ session_start();
                     Está esperando <br> o quê?
                 </h2>
 
-                <a href="#" class="w-percent-80 flex justify-center items-center">
+                <a href="agendar.php" class="w-percent-80 flex justify-center items-center">
 
                     <button class="w-full bg-ycol p-5 text-white rounded-xl font-['Smythe'] font-bold text-2xl
                     border border-solid border-ycol 
@@ -374,7 +374,7 @@ session_start();
         </section>
     </section>
     <!------------------------------RODAPÉ--------------------------------->
-    <footer class="w-full h-[620px] mt-[500px] bottom-0 flex flex-col ">
+    <footer class="w-full h-[620px] mt-[100px] bottom-0 flex flex-col ">
 
         <section class="w-full h-[435px] max-h-fit bg-[#232323]
         flex flex-col md:flex-row items-center justify-evenly">
@@ -418,7 +418,7 @@ session_start();
                 text-[#ECA72C] font-bold font-['Inter']
                 hover:text-white hover:bg-[#ECA72C] ease-in-out duration-300">
 
-                    <a href="#" class="w-[100%] h-[100%]
+                    <a href="agendar.php" class="w-[100%] h-[100%]
                     text-[20px] md:text-[30px]">
 
                         AGENDAR

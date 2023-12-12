@@ -27,9 +27,9 @@
             $selectedTime = $_POST['timeUserSchedule'];
             $userCli = $_SESSION['userName'];
 
-            echo $userId . "<br>";
-            echo $selectedAttendant. "<br>";
-            echo $selectedDate . "<br>";
+            //echo $userId . "<br>";
+            //echo $selectedAttendant. "<br>";
+            //echo $selectedDate . "<br>";
             
 
             switch ($selectedTime) {
@@ -70,7 +70,7 @@
                     break;
             }
 
-            echo $selectedTime;
+            //echo $selectedTime;
 
             $query = "INSERT INTO TB_SCHEDULES (SCHEDULE_SERVICES, SCHEDULE_CLIENT, SCHEDULE_ATTENDANT, SCHEDULE_DATE, SCHEDULE_VALUE, SCHEDULE_TIME) VALUES (:schService, :schCli, :schAtt, :schDate, :schValue, :schTime)";
 

@@ -20,23 +20,22 @@ $linha = $consulta->fetch(PDO::FETCH_ASSOC);
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="./assets/js/tailwind.config.js" defer></script>
-    <script src="./assets/js/alterar-cliente.js"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
-
+    
     <link rel="shortcut icon" href="./assets/images/icon/favicon.ico" type="image/x-icon">
     <title>Pente Fino | Admin</title>
-</head>
-<body>
-<div class="p-20 flex justify-center items-center flex-col" id="box-prin">
-   
-      <h3 class="md:text-7xl text-5xl text-yellow-500 font-['Sancreek'] mt-5">Alterando</h3>
-      <?php echo "<h3 class='text-5xl mt-10'>Cliente: {$linha['USER_FIRSTNAME']}</h3>"; ?>
-      <form action="alterar-cliente-action.php" method="POST" class="w-1/2">
-         <input type="hidden" name="txtid" value="<?php echo "{$linha['USER_ID']}"?>">
-         <div class="mt-5">
-            <label for="nome" class="font-['Smythe'] text-2xl">Nome: </label><br>
-            <input type="text" name="txtnome" id="nome" class="w-full rounded" value="<?php echo "{$linha['USER_FIRSTNAME']}"; ?>">
-         </div>
+   </head>
+   <body>
+      <div class="p-20 flex justify-center items-center flex-col" id="box-prin">
+         
+         <h3 class="md:text-7xl text-5xl text-yellow-500 font-['Sancreek'] mt-5">Alterando</h3>
+         <?php echo "<h3 class='text-5xl mt-10'>Cliente: {$linha['USER_FIRSTNAME']}</h3>"; ?>
+         <form action="alterar-cliente-action.php" method="POST" class="w-1/2">
+            <input type="hidden" name="txtid" value="<?php echo "{$linha['USER_ID']}"?>">
+            <div class="mt-5">
+               <label for="nome" class="font-['Smythe'] text-2xl">Nome: </label><br>
+               <input type="text" name="txtnome" id="nome" class="w-full rounded" value="<?php echo "{$linha['USER_FIRSTNAME']}"; ?>">
+            </div>
          <div class="mt-5">
             <label for="sobrenome"  class="font-['Smythe'] text-2xl">Sobrenome: </label><br>
             <input type="text" name="txtsobrenome" id="sobrenome" class="w-full rounded" value="<?php echo "{$linha['USER_LASTNAME']}"; ?>">
@@ -70,15 +69,18 @@ $linha = $consulta->fetch(PDO::FETCH_ASSOC);
       <button id="but-excluir" class="text-red-500 font-['Smythe'] text-3xl mt-5 hover:text-red-800 ease-in-out duration-[400ms]">Excluir</button>
 
             <div class="box-show" id="box-show">
-               <h1 class="font-['Smythe'] text-3xl">Tem certeza que deseja excluir?</h1>
+               <div class="p-10 bg-white rounded">
+               <h1 class="font-['Smythe'] text-3xl">Tem certeza que deseja excluir ? </h1>
                <div class="mt-5 flex justify-evenly width-full">
                   <button id="btn-cancelar" class="text-green-500 font-['Smythe'] text-3xl hover:text-green-800 ease-in-out duration-[400ms]">Cancelar</button>
-                  <button id="btn-confirmar" class="text-red-500 font-['Smythe'] text-3xl hover:text-red-800 ease-in-out duration-[400ms]"><?php echo "<a href='excluir_action.php?id=$codigo'></a>"; ?>Excluir</button>
+                  <button id="btn-confirmar" class="text-red-500 font-['Smythe'] text-3xl hover:text-red-800 ease-in-out duration-[400ms]"><?php echo "<a href='delete.php?id=$codigo'>";?>Excluir<?php echo "</a>"; ?></button>
+               </div>
                </div>
             </div>
 
 
-   
-<div>
+            
+            <div>
 </body>
+<script src="./assets/js/alterar-cliente.js"></script>
 </html>
