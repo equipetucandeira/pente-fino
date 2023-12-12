@@ -16,7 +16,7 @@ $resp = $stmt->fetch(PDO::FETCH_ASSOC);
 $name_adm = $resp['USER_FIRSTNAME'] . " " . $resp['USER_LASTNAME'];
 
 
-$query_cal = "SELECT
+$query_cal = "SELECT 
 s.SCHEDULE_ID,
 c.USER_FIRSTNAME AS client_firstname,
 c.USER_LASTNAME AS client_lastname,
@@ -65,144 +65,22 @@ $stmt_fun->execute();
 </head>
 
 <body>
-<<<<<<< HEAD
-
 <section class="bg-[url('./assets/images/back-access-adm.jpg')] h-screen bg-cover">
-
-
-=======
-<section class="bg-[url('./assets/images/back-access-adm.jpg')] h-screen bg-cover">
->>>>>>> 5a56f9b6b3a959582fb73bca4410df6f15ee1a7c
-        <header>
-            <!-- Menu Hamburguer visível apenas em telas pequenas -->
-            <div class="h-100px md:hidden flex justify-evenly items-center z-50	">
-
-                <div class=" mobile-menu flex flex-col items-center cursor-pointer h-100px justify-center">
-
-                    <div class="line1 w-10 h-1 bg-black mb-1"></div>
-                    <div class="line2 w-10 h-1 bg-black mb-1"></div>
-                    <div class="line3 w-10 h-1 bg-black"></div>
-                </div>
-
-                <a href="#" class="mt-[10px]">
-                    <img src="./assets/images/logo-principal.png" alt="Logo Pente-Fino" width="100" height="100">
-                </a>
-            </div>
-
-            <!-- Menu de Navegação para telas médias e grandes -->
-            <ul class="hidden w-full justify-evenly h-100px items-center p-5 font-['Sancreek'] text-2xl text-white
-            md:flex lg:text-3xl nav-list">
-                <li>
-                    <a href="#agendamentos" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
-                        Agendamentos
-                    </a>
-                </li>
-                <li>
-                    <a href="#clientes" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
-                        Clientes
-                    </a>
-                </li>
-                <li class="flex">
-                    <a href="#Top" class="mt-[10px]">
-                        <img src="./assets/images/logo-principal.png" alt="Logo Pente-Fino" width="100" height="100">
-                    </a>
-                </li>
-                <li>
-                    <a href="#funcionarios" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
-                        Funcionários
-                    </a>
-                </li>
-                <li>
-                    <a href="./logout.php" class="text-red-500 hover:text-white ease-in-out duration-[400ms]">
-                        Sair
-                    </a>
-                </li>
-
-            </ul>
-
-            <!-- Menu Responsivo para telas pequenas -->
-            <ul id="mobileNav" class="md:hidden flex flex-col items-center bg-transparent backdrop-blur text-white w-full absolute top-h-100px  
-            transition ease-in-out delay-150 transform scale-y-0 font-['Sancreek'] text-3xl h-h-calc justify-around">
-
-                <li>
-                    <a href="#agendamentos" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
-                        Agendamentos
-                    </a>
-                </li>
-                <li>
-                    <a href="#clientes" class="py-2 hover:text-yellow-500 ease-in-out duration-[400ms]">
-                        Clientes
-                    </a>
-                </li>
-                <li>
-                    <a href="#funcionarios" class="py-2 hover:text-yellow-500 ease-in-out duration-[400ms]">
-                        Funcionários
-                    </a>
-                </li>
-                <li>
-                    <a href="./logout.php" class="py-2 hover:text-red-500 ease-in-out duration-[400ms]">
-                        Sair
-                    </a>
-                </li>
-            </ul>
-        </header>
+<?php include "header.php"?>
 
         <div class="flex flex-col h-h-calc justify-center font-['Sancreek'] ml-percent-10 w-1/2">
 
             <h1 class="md:text-7xl text-5xl text-white">
-
                 Seja Bem vindo </h1> <h1 class="md:text-7xl text-5xl text-yellow-500"><?php 
                 echo "$name_adm";
                  ?> </h1>
-                Seja Bem vindo </h1>
-            <h1 class="md:text-7xl text-5xl text-yellow-500"><?php
-                                                                echo "$name_adm";
-                                                                ?> </h1>
-
-
+            
         </div>
     </section>
-
     <section class="p-10 w-full mt-20" id="agendamentos">
         <div class="w-full">
             <h2 class="md:text-7xl text-5xl text-yellow-500 font-['Sancreek']">Agendamentos</h2>
             <?php
-
-     if (count($result_cal) > 0) {
-        echo "<table class='w-full mt-10'>";
-        echo "<thead>";
-        echo "<tr class='font-['Smythe'] text-3xl'>";
-    if (count($result_cal) > 0) {
-        echo "<table class='w-full mt-10'>";
-        echo "<thead>";
-        echo "<tr class='font-[\"Smythe\"] text-3xl'>";
-        echo "<th>ID</th>";
-        echo "<th>Cliente</th>";
-        echo "<th>Atendente</th>";
-        echo "<th>Serviço</th>";
-        echo "<th>Data</th>";
-        echo "<th>Valor</th>";
-        echo "</tr>";
-        echo "</thead>";
-        echo "<tbody>";
-
-        foreach ($result_cal as $row) {
-            echo "<tr>";
-            echo "<td class='text-center'>{$row['SCHEDULE_ID']}</td>";
-            echo "<td class='text-center'>{$row['client_firstname']} {$row['client_lastname']}</td>";
-            echo "<td class='text-center'>{$row['attendant_firstname']} {$row['attendant_lastname']}</td>";
-            echo "<td class='text-center'>{$row['SERVICE_NAME']}</td>";
-            echo "<td class='text-center'>{$row['SCHEDULE_DATE']}</td>";
-            echo "<td class='text-center'>{$row['SCHEDULE_VALUE']}</td>";
-            echo "</tr>";
-        }
-
-        echo "</tbody>";
-        echo "</table>";
-    } else {
-        echo "Nenhum agendamento encontrado.";
-    }
-
             if (count($result_cal) > 0) {
                 echo "<div class='overflow-x-auto'>";
                 echo "<table class='w-full mt-10 table-auto'>";
@@ -217,37 +95,26 @@ $stmt_fun->execute();
                 echo "</tr>";
                 echo "</thead>";
                 echo "<tbody>";
-        echo "<th>Horário</th>";
-        echo "<th>Valor</th>";
-        echo "<th>Excluir</th>";
-        echo "</tr>";
-        echo "</thead>";
-        echo "<tbody>";
 
+                foreach ($result_cal as $row) {
+                    echo "<tr>";
+                    echo "<td class='px-4 py-2 text-center'>{$row['SCHEDULE_ID']}</td>";
+                    echo "<td class='px-4 py-2 text-center'>{$row['client_firstname']} {$row['client_lastname']}</td>";
+                    echo "<td class='px-4 py-2 text-center'>{$row['attendant_firstname']} {$row['attendant_lastname']}</td>";
+                    echo "<td class='px-4 py-2 text-center'>{$row['SERVICE_NAME']}</td>";
+                    $scheduleDate = new DateTime($row['SCHEDULE_DATE']);
+                    $formattedDate = $scheduleDate->format('d/m/Y');
+                    echo "<td class='text-center'>$formattedDate</td>";
+                    echo "<td class='px-4 py-2 text-center'>{$row['SCHEDULE_VALUE']}</td>";
+                    echo "</tr>";
+                }
 
-        foreach ($result_cal as $row) {
-            echo "<tr class='mt-8 leading-10'>";
-            echo "<td class='text-center'>{$row['SCHEDULE_ID']}</td>";
-            echo "<td class='text-center'>{$row['client_firstname']} {$row['client_lastname']}</td>";
-            echo "<td class='text-center'>{$row['attendant_firstname']} {$row['attendant_lastname']}</td>";
-            echo "<td class='text-center'>{$row['SERVICE_NAME']}</td>";
-            $scheduleDate = new DateTime($row['SCHEDULE_DATE']);
-            $formattedDate = $scheduleDate->format('d/m/Y');
-            echo "<td class='text-center'>$formattedDate</td>";            echo "<td class='text-center'>{$row['SCHEDULE_TIME']}</td>";
-            echo "<td class='text-center'>{$row['SCHEDULE_VALUE']}</td>";
-            echo "<td class='text-center'><a class='text-center flex justify-center items-center' href='delete-agenda.php?id={$row['SCHEDULE_ID']}'> <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='w-6 h-6 text-gray-800 hover:text-red-500 ease-in-out duration-[400ms]'>
-                <path stroke-linecap='round' stroke-linejoin='round' d='M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5m6 4.125l2.25 2.25m0 0l2.25 2.25M12 13.875l2.25-2.25M12 13.875l-2.25 2.25M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z' />
-              </svg>
-              </a></td>
-            </tr>";
-            echo "</tr>";
-        }
-
-        echo "</tbody>";
-        echo "</table>";
-    } else {
-        echo "Nenhum agendamento encontrado.";
-    }
+                echo "</tbody>";
+                echo "</table>";
+                echo "</div>";
+            } else {
+                echo "<p class='mt-4 text-center'>Nenhum agendamento encontrado.</p>";
+            }
             ?>
         </div>
     </section>
@@ -255,34 +122,6 @@ $stmt_fun->execute();
     <section class="p-10 w-full mt-20" id="clientes">
         <div class="w-full">
             <h2 class="md:text-7xl text-5xl text-blue-500 font-['Sancreek']">Lista de Clientes</h2>
-            <table class="w-full mt-10">
-
-            <tr class="font-['Smythe'] text-3xl">
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Sobrenome</th>
-                <th>Data Nasc.</th>
-                <th>Email</th>
-                <th>Telefone</th>
-                <th>Config</th>
-            </tr>
-        <?php
-            while ($resp_cli = $stmt_cli->fetch(PDO::FETCH_ASSOC)) {
-                echo "<tr class='mt-8 leading-10'><td class='text-center'>{$resp_cli['USER_ID']}</td>";
-                echo "<td class='text-center'>{$resp_cli['USER_FIRSTNAME']}</td>";
-                echo "<td class='text-center'>{$resp_cli['USER_LASTNAME']}</td>";
-                echo "<td class='text-center'>{$resp_cli['USER_BIRTH']}</td>";
-                echo "<td class='text-center'>{$resp_cli['USER_EMAIL']}</td>";
-                echo "<td class='text-center'>{$resp_cli['USER_PHONE']}</td>";
-                echo "<td class='text-center'><a class='text-center flex justify-center items-center' href='alterar-cliente.php?id={$resp_cli['USER_ID']}'> <svg class='w-6 h-6 text-gray-800 hover:text-blue-500 ease-in-out duration-[400ms]' aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'>
->>>>>>> 5a56f9b6b3a959582fb73bca4410df6f15ee1a7c
-                <path  stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7.75 4H19M7.75 4a2.25 2.25 0 0 1-4.5 0m4.5 0a2.25 2.25 0 0 0-4.5 0M1 4h2.25m13.5 6H19m-2.25 0a2.25 2.25 0 0 1-4.5 0m4.5 0a2.25 2.25 0 0 0-4.5 0M1 10h11.25m-4.5 6H19M7.75 16a2.25 2.25 0 0 1-4.5 0m4.5 0a2.25 2.25 0 0 0-4.5 0M1 16h2.25'/>
-            </svg></a></td>
-            </tr>";
-            }      
-      ?>
-            </table>
-
             <div class="overflow-x-auto">
                 <table class="w-full mt-10 table-auto">
                     <thead>
@@ -323,37 +162,6 @@ $stmt_fun->execute();
     <section class="p-10 w-full mt-20" id="funcionarios">
         <div class="w-full">
             <h2 class="md:text-7xl text-5xl text-green-500 font-['Sancreek']">Lista de Funcionários</h2>
-            <table class="w-full mt-10">
-
-            <tr class="font-['Smythe'] text-3xl">
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Sobrenome</th>
-                <th>Data Nasc.</th>
-                <th>Email</th>
-                <th>Telefone</th>
-                <th>Config</th>
-            </tr>
-        <?php
-            while ($resp_fun = $stmt_fun->fetch(PDO::FETCH_ASSOC)) {
-                echo "<tr class='mt-8 leading-10'><td class='text-center'>{$resp_fun['USER_ID']}</td>";
-                echo "<td class='text-center'>{$resp_fun['USER_FIRSTNAME']}</td>";
-                echo "<td class='text-center'>{$resp_fun['USER_LASTNAME']}</td>";
-                echo "<td class='text-center'>{$resp_fun['USER_BIRTH']}</td>";
-                echo "<td class='text-center'>{$resp_fun['USER_EMAIL']}</td>";
-                echo "<td class='text-center'>{$resp_fun['USER_PHONE']}</td>";
-
-                echo "<td class='text-center'><a class='text-center flex justify-center items-center' href='alterar-cliente.php?id={$resp_fun['USER_ID']}'> <svg class='w-6 h-6 text-gray-800 hover:text-green-500 ease-in-out duration-[400ms]' aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'>
-                <path  stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7.75 4H19M7.75 4a2.25 2.25 0 0 1-4.5 0m4.5 0a2.25 2.25 0 0 0-4.5 0M1 4h2.25m13.5 6H19m-2.25 0a2.25 2.25 0 0 1-4.5 0m4.5 0a2.25 2.25 0 0 0-4.5 0M1 10h11.25m-4.5 6H19M7.75 16a2.25 2.25 0 0 1-4.5 0m4.5 0a2.25 2.25 0 0 0-4.5 0M1 16h2.25'/>
-            </svg></a></td>
-            </tr>";
-            }      
-      ?>
-            </table>
-        </div>
-    </section>
-</body>
-
             <div class="overflow-x-auto">
                 <table class="w-full mt-10 table-auto">
                     <thead>
@@ -454,6 +262,4 @@ flex flex-col items-center justify-center">
 </section>
 </footer>
 </body>
-
 </html>
-

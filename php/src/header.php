@@ -18,11 +18,22 @@
                 <img src="./assets/images/logo-pentefino.png" alt="Logo Pente-Fino" width="100" height="100">
             </a>
         </li>
+        <?php if(isset($_SESSION['userMail']) && !empty($_SESSION['userMail']))
+        {
+        ?>
         <li>
             <a href="agendar.php" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
                 Agendar
             </a>
-        </li>
+        </liv>
+        <?php }else{?>
+            <li>
+            <a href="index.php#agendar" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
+                Agendar
+            </a>
+        </liv>
+        <?php }?>
+
     
         <?php if( isset($_SESSION['userMail']) && !empty($_SESSION['userMail']) )
         {
@@ -107,9 +118,9 @@ transition ease-in-out delay-150 transform scale-y-0 font-['Sancreek'] text-3xl 
 <!-- Menu items for small screens -->
 <li>
     <?php if( isset($_SESSION['userLevel']) && $_SESSION['userLevel'] == 3){?>
-    <a href="./user-access.php" class="text-gray-700 block px-4 py-2 text-sm">Minha Conta</a>
+    <a href="./user-access.php" class="py-2 hover:text-yellow-500 ease-in-out duration-[400ms]">Minha Conta</a>
     <?php }else{ ?>
-    <a href="./admin-access.php" class="text-gray-700 block px-4 py-2 text-sm">Minha Conta</a>
+    <a href="./admin-access.php" class="py-2 hover:text-yellow-500 ease-in-out duration-[400ms]">Minha Conta</a>
     <?php } ?>
 </li>
 <li>

@@ -326,7 +326,7 @@ session_start();
         </section>
     </section>
     <!------------------------------RODAPÉ--------------------------------->
-    <footer class="w-full h-[620px] mt-[500px] bottom-0 flex flex-col ">
+    <footer class="w-full h-[620px]  bottom-0 flex flex-col ">
 
         <section class="w-full h-[435px] max-h-fit bg-[#232323]
         flex flex-col md:flex-row items-center justify-evenly">

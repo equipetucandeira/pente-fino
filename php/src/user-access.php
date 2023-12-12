@@ -65,63 +65,7 @@ $resp = $stmt_cal->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <section class="bg-[url('./assets/images/back-user.jpg')] h-screen bg-cover">
       <?php include "header.php"?>
-<section class="bg-[url('./assets/images/back-user.jpg')] h-screen bg-cover">
-        <header>
-            <!-- Menu Hamburguer visível apenas em telas pequenas -->
-            <div class="h-100px md:hidden flex justify-evenly items-center z-50	">
-
-                <div class=" mobile-menu flex flex-col items-center cursor-pointer h-100px justify-center">
-
-                    <div class="line1 w-10 h-1 bg-black mb-1"></div>
-                    <div class="line2 w-10 h-1 bg-black mb-1"></div>
-                    <div class="line3 w-10 h-1 bg-black"></div>
-                </div>
-
-                <a href="#" class="mt-[10px]">
-                    <img src="./assets/images/logo-principal.png" alt="Logo Pente-Fino" width="100" height="100">
-                </a>
-
-                
-            </div>
-
-            <!-- Menu de Navegação para telas médias e grandes -->
-            <ul class="hidden w-full justify-evenly h-100px items-center p-5 font-['Sancreek'] text-2xl text-white
-            md:flex lg:text-3xl nav-list">
-                <li>
-                    <a href="#agendamentos" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
-                        Agendamentos
-                    </a>
-                </li>
-                <li class="flex">
-                    <a href="#Top" class="mt-[10px]">
-                        <img src="./assets/images/logo-principal.png" alt="Logo Pente-Fino" width="100" height="100">
-                    </a>
-                </li>
-                <li>
-                    <a href="./logout.php" class="text-red-500 hover:text-white ease-in-out duration-[400ms]">
-                        Sair
-                    </a>
-                </li>
-                
-            </ul>
-
-            <!-- Menu Responsivo para telas pequenas -->
-            <ul id="mobileNav" class="md:hidden flex flex-col items-center bg-transparent backdrop-blur text-white w-full absolute top-h-100px  
-            transition ease-in-out delay-150 transform scale-y-0 font-['Sancreek'] text-3xl h-h-calc justify-around">
-
-                <li>
-                    <a href="#agendamentos" class="hover:text-yellow-500 ease-in-out duration-[400ms]">
-                        Agendamentos
-                    </a>
-                </li>
-
-                <li>
-                    <a href="./logout.php" class="py-2 hover:text-red-500 ease-in-out duration-[400ms]">
-                        Sair
-                    </a>
-                </li>
-            </ul>
-        </header>
+        
         <div class="flex flex-col h-h-calc justify-center font-['Sancreek'] ml-percent-10 w-1/2">
 
             <h1 class="md:text-7xl text-5xl text-white">
