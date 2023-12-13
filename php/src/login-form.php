@@ -16,7 +16,7 @@
 </head>
 
 <body class="w-full h-screen bg-[url('/assets/images/bgImage-login.jpg')] bg-no-repeat bg-cover backdrop-blur-sm">
-    <?php include "header.php"; ?>
+
     <section class="m-auto relative flex items-center justify-center min-h-screen">
 
         <div class="bg-zinc-300 bg-opacity-90 rounded-2xl p-10 w-fit h-fit flex flex-col items-center">

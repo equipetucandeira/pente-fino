@@ -15,7 +15,7 @@ $query->bindValue('USER_ID', $codigo, PDO::PARAM_INT);
 
 $query->execute();
 
-header("Location: " . $_SERVER['HTTP_REFERER']);
+header("Location: admin-access.php");
 
 
 ?>

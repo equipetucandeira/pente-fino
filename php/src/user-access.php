@@ -40,9 +40,6 @@ $stmt_cal->bindValue(':idatual', $idAtual, PDO::PARAM_INT);
 $stmt_cal->execute();
 $resp = $stmt_cal->fetchAll(PDO::FETCH_ASSOC);
 
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -63,9 +60,8 @@ $resp = $stmt_cal->fetchAll(PDO::FETCH_ASSOC);
 </head>
 
 <body>
-    <section class="bg-[url('./assets/images/back-user.jpg')] h-screen bg-cover">
-      <?php include "header.php"?>
-        
+<section class="bg-[url('./assets/images/back-user.jpg')] h-screen bg-cover">
+        <?php include "header.php"?>
         <div class="flex flex-col h-h-calc justify-center font-['Sancreek'] ml-percent-10 w-1/2">
 
             <h1 class="md:text-7xl text-5xl text-white">
@@ -193,6 +189,4 @@ flex flex-col items-center justify-center">
 </section>
 </footer>
 </body>
-<<<<<<< HEAD
-
 </html>

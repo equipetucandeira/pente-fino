@@ -32,10 +32,15 @@ session_start();
 
             <button class="w-full mt-9 text-4xl text-white border border-solid border-white p-4 
             hover:border-ycol hover:text-ycol ease-in-out duration-[400ms]">
-
-                <a href="#" class="w-full h-[100%]">
+            <?php if (isset($_SESSION['userMail']) && !empty($_SESSION['userMail'])) { ?>
+                <a href="agendar.php" class="w-full h-[100%]">
                     Agende agora
                 </a>
+            <?php }else{?>
+                <a href="index.php#agendar" class="w-full h-[100%]">
+                Agende agora
+                </a>
+            <?php }?>
             </button>
         </div>
     </section>
@@ -180,7 +185,7 @@ session_start();
 
     <!--------------------------AGENDAMENTOS----------------------------->
 
-    <section class="flex flex-col justify-center items-center md:h-h-calc mt-10">
+    <section class="flex flex-col justify-center items-center md:h-h-calc mt-10 md:mt-[130px] md:mb-[130px]">
 
         <h1 id="agendar" class="md:text-8xl text-6xl font-['Smythe'] mb-5 font-bold">
             Agendamentos
@@ -233,8 +238,11 @@ session_start();
 
                     Está esperando <br> o quê?
                 </h2>
-
-                <a href="#" class="w-percent-80 flex justify-center items-center">
+                <?php if (isset($_SESSION['userMail']) && !empty($_SESSION['userMail'])) { ?>
+                <a href="agendar.php" class="w-percent-80 flex justify-center items-center">
+                <?php }else{?>
+                <a href="agendar.php" class="w-percent-80 flex justify-center items-center">
+                <?php }?>
 
                     <button class="w-full bg-ycol p-5 text-white rounded-xl font-['Smythe'] font-bold text-2xl
                     border border-solid border-ycol 
@@ -258,7 +266,7 @@ session_start();
 
             <section class="flex flex-col items-center gap-[20px] pb-[50px] lg:flex-row md:justify-evenly w-[100%] h-fit mt-[6%]">
 
-                <div class="w-[85%] md:w-[70%] lg:w-[30%] h-fit pb-[20px] flex flex-col 
+                <div class="w-[85%] md:w-[70%] lg:w-[30%] lg:h-[400px] h-fit pb-[20px] flex flex-col 
                 bg-zinc-300 bg-opacity-90 rounded-[20px]">
 
                     <div class="flex justify-evenly mt-[20px] sm:mb-[20px]">
@@ -280,7 +288,7 @@ session_start();
                     </p>
                 </div>
 
-                <div class="w-[85%] md:w-[70%] lg:w-[30%] h-fit pb-[20px] flex flex-col 
+                <div class="w-[85%] md:w-[70%] lg:w-[30%] lg:h-[400px] h-fit pb-[20px] flex flex-col 
                 bg-zinc-300 bg-opacity-90 rounded-[20px]">
 
                     <div class="flex justify-evenly mt-[20px] sm:mb-[20px]">
@@ -301,7 +309,7 @@ session_start();
                     </p>
                 </div>
 
-                <div class="w-[85%] md:w-[70%] lg:w-[30%] h-fit pb-[20px] flex flex-col 
+                <div class="w-[85%] md:w-[70%] lg:w-[30%] lg:h-[400px]  h-fit pb-[20px] flex flex-col 
                 bg-zinc-300 bg-opacity-90 rounded-[20px]">
 
                     <div class="flex justify-evenly mt-[20px] sm:mb-[20px]">
